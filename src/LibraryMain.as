@@ -9,8 +9,8 @@ package
 		public function returnTrue():Boolean
 		{
 // test..
-return false;
-//			return true;
+//return false;
+			return true;
 		}
 
 		public function returnNumber():Number
