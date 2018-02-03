@@ -10,4 +10,9 @@ before_script:
 #script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacOS/Flash\ Player\ Debugger
 
 deploy:
+  provider:release
+  file:
+    - /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes/TestRunner.swf
   skip_cleanup: true
+  on:
+    repo:master
