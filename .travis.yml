@@ -7,7 +7,7 @@ before_script:
   # http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
   - sh getFpFromArchive.sh 'http://download.macromedia.com/pub/flashplayer/installers/archive/fp_11.7.700.225_archive.zip'
 
-script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacOS/Flash\ Player\ Debugger
+#script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacOS/Flash\ Player\ Debugger
 
 deploy:
   skip_cleanup: true
