@@ -15,5 +15,6 @@ deploy:
     - /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes/TestRunner.swf
   skip-cleanup: true
   keep-history: true
+  github-token: $GITHUB_TOKEN
   on:
     branch: master
