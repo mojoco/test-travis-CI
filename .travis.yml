@@ -11,31 +11,33 @@ script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacO
 
 before_deploy:
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
-  - cp -r /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes $TRAVIS_BUILD_DIR/_BUILD
+#  - cp -r /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes $TRAVIS_BUILD_DIR/_BUILD
+  - cp -r $HOME/build/$TRAVIS_REPO_SLUG $TRAVIS_BUILD_DIR/_BUILD
+  
   - echo "==========================================================================="
   - ls $TRAVIS_BUILD_DIR
   - echo "==========================================================================="
   - ls $HOME
-  - echo "==========================================================================="
-  - ls $HOME/build
-  - echo "==========================================================================="
-  - ls /Users/travis/build/mojoco/travis-CI-actionscript-demo
+#  - echo "==========================================================================="
+#  - ls $HOME/build
+#  - echo "==========================================================================="
+#  - ls /Users/travis/build/mojoco/travis-CI-actionscript-demo
   - echo "==========================================================================="
   - ls $HOME/build/$TRAVIS_REPO_SLUG/target
   - echo "==========================================================================="
   - ls $HOME/build/$TRAVIS_REPO_SLUG/target/classes
   - echo "==========================================================================="
   - ls $HOME/build/$TRAVIS_REPO_SLUG/target/test-classes
-  - echo "==========================================================================="
-  - ls $HOME/build/$TRAVIS_REPO_SLUG/target/surefire-reports
+#  - echo "==========================================================================="
+#  - ls $HOME/build/$TRAVIS_REPO_SLUG/target/surefire-reports
   - echo "==========================================================================="
 
 deploy:
   provider: pages
 #  local-dir: $HOME/build/$TRAVIS_REPO_SLUG/target/test-classes
-  file:
-    - /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes/TestRunner.swf
-    - $HOME/build/$TRAVIS_REPO_SLUG/target/travis-CI-actionscript-demo-1.0.0.swf
+#  file:
+#    - /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes/TestRunner.swf
+#    - $HOME/build/$TRAVIS_REPO_SLUG/target/travis-CI-actionscript-demo-1.0.0.swf
   skip-cleanup: true
   keep-history: true
   github-token: $GITHUB_API_TOKEN
