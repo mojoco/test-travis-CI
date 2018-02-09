@@ -30,6 +30,7 @@ before_deploy:
 
 deploy:
   provider: pages
+  local-dir: $HOME/build/$TRAVIS_REPO_SLUG/target/test-classes
   file:
     - /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes/TestRunner.swf
     - $HOME/build/$TRAVIS_REPO_SLUG/target/travis-CI-actionscript-demo-1.0.0.swf
