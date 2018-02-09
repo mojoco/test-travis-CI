@@ -11,8 +11,8 @@ script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacO
 
 before_deploy:
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
-#  - cp -r /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes $TRAVIS_BUILD_DIR/_BUILD
-  - cp -r $HOME/build/$TRAVIS_REPO_SLUG $TRAVIS_BUILD_DIR/_BUILD
+  - cp -r /Users/travis/build/mojoco/test-travis-CI/target/test-classes $TRAVIS_BUILD_DIR/_BUILD
+#  - cp -r $HOME/build/$TRAVIS_REPO_SLUG $TRAVIS_BUILD_DIR/_BUILD
   
   - echo "==========================================================================="
   - ls $TRAVIS_BUILD_DIR
