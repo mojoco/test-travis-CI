@@ -10,6 +10,8 @@ before_script:
 script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacOS/Flash\ Player\ Debugger
 
 before_deploy:
+  - mkdir $TRAVIS_BUILD_DIR/_BUILD
+  - cp -r /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes $TRAVIS_BUILD_DIR/_BUILD
   - echo "==========================================================================="
   - ls $TRAVIS_BUILD_DIR
   - echo "==========================================================================="
@@ -30,7 +32,7 @@ before_deploy:
 
 deploy:
   provider: pages
-  local-dir: $HOME/build/$TRAVIS_REPO_SLUG/target/test-classes
+#  local-dir: $HOME/build/$TRAVIS_REPO_SLUG/target/test-classes
   file:
     - /Users/travis/build/mojoco/travis-CI-actionscript-demo/target/test-classes/TestRunner.swf
     - $HOME/build/$TRAVIS_REPO_SLUG/target/travis-CI-actionscript-demo-1.0.0.swf
