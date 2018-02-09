@@ -11,13 +11,13 @@ script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacO
 
 before_deploy:
   - echo "==========================================================================="
-  - echo ""
   - ls $TRAVIS_BUILD_DIR
-  - echo ""
   - echo "==========================================================================="
-  - echo ""
   - ls $HOME
-  - echo ""
+  - echo "==========================================================================="
+  - ls $HOME/build
+  - echo "==========================================================================="
+  - ls /Users/travis/build/mojoco/travis-CI-actionscript-demo
   - echo "==========================================================================="
 
 deploy:
