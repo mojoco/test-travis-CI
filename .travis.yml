@@ -8,6 +8,7 @@ before_script:
   - sh getFpFromArchive.sh 'http://download.macromedia.com/pub/flashplayer/installers/archive/fp_11.7.700.225_archive.zip'
 
 #script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacOS/Flash\ Player\ Debugger
+  - chmod +x app/_build.command
 script: app/_build.command
 
 before_deploy:
