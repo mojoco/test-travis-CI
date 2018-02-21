@@ -7,9 +7,7 @@ before_script:
   # http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
   - sh getFpFromArchive.sh 'http://download.macromedia.com/pub/flashplayer/installers/archive/fp_11.7.700.225_archive.zip'
 
-#script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacOS/Flash\ Player\ Debugger
-  - chmod +x app/_build.command
-script: app/_build.command
+script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacOS/Flash\ Player\ Debugger
 
 before_deploy:
   
@@ -24,6 +22,10 @@ before_deploy:
 #  - echo "==========================================================================="
 #  - ls $HOME/build/$TRAVIS_REPO_SLUG/target/test-classes
   - echo "==========================================================================="
+  
+  - cd app
+  - chmod +x _build.command
+  - _build.command
 
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
   - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
