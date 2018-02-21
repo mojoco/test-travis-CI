@@ -15,6 +15,7 @@ echo "------------"
 
 #	$SDK_HOME/bin/amxmlc -version
 #	$SDK_HOME/bin/amxmlc Main.mxml
+	amxmlc -version
 	amxmlc Main.mxml
 
 echo "------------"
