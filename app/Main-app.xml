@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://ns.adobe.com/air/application/27.0">
+	
+	<id>com.domaine.app</id>
+	<versionNumber>1.0</versionNumber>
+    <versionLabel></versionLabel>
+	<name>App Name</name>
+	<filename>App 1.0</filename>
+	<copyright></copyright>
+    <description></description>
+	
+	<initialWindow>
+		<content>Main.swf</content>
+		<renderMode>direct</renderMode>
+		<fullScreen>false</fullScreen>
+		<aspectRatio>any</aspectRatio>
+		<autoOrients>true</autoOrients>
+		<systemChrome>standard</systemChrome>
+		<transparent>false</transparent>
+		<visible>true</visible>
+	</initialWindow>
+	
+	<customUpdateUI>false</customUpdateUI>
+	<allowBrowserInvocation>false</allowBrowserInvocation>
+	
+	<!--
+	<supportedProfiles>desktop</supportedProfiles>
+	-->
+	
+</application>
