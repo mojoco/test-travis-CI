@@ -21,8 +21,12 @@ before_deploy:
 #  - ls $HOME/build/$TRAVIS_REPO_SLUG/target/classes
 #  - echo "==========================================================================="
 #  - ls $HOME/build/$TRAVIS_REPO_SLUG/target/test-classes
+
   - echo "==========================================================================="
+  - ls ~
   
+  - echo "==========================================================================="
+
 #  - cd app
 #  - chmod +x _build.command
 #  - ./_build.command
