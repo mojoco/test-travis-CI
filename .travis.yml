@@ -28,6 +28,9 @@ before_deploy:
 #  - ls ~/.m2/repository
 #  - ls ~/.m2/repository/net
   - ls ~/.m2/repository/org/apache
+  - ls ~/.m2/repository/org/apache/apache
+  - ls ~/.m2/repository/org/apache/commons
+  - ls ~/.m2/repository/org/apache/maven
 #  - ls ~/.m2/repository/org/sonatype
   
   - echo "==========================================================================="
