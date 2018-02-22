@@ -26,6 +26,8 @@ before_deploy:
 #  - ls ~
 #  - ls ~/.m2
   - ls ~/.m2/repository
+  - ls ~/.m2/repository/net
+  - ls ~/.m2/repository/org
   
   - echo "==========================================================================="
 
