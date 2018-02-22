@@ -25,9 +25,10 @@ before_deploy:
   - echo "==========================================================================="
 #  - ls ~
 #  - ls ~/.m2
-  - ls ~/.m2/repository
-  - ls ~/.m2/repository/net
-  - ls ~/.m2/repository/org
+#  - ls ~/.m2/repository
+#  - ls ~/.m2/repository/net
+  - ls ~/.m2/repository/org/apache
+#  - ls ~/.m2/repository/org/sonatype
   
   - echo "==========================================================================="
 
