@@ -89,9 +89,9 @@ deploy:
   api_key: $GITHUB_TOKEN_02
   file:
         - Main.dmg
-  overwrite: true
+#  overwrite: true
   skip_cleanup: true
   on:
-#    tags: true
-    branch: master
+    tags: true
+#    branch: master
 
