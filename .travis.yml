@@ -59,6 +59,7 @@ before_deploy:
 
   # dmg.. (best compression)
   - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
+  - cp Main.dmg $TRAVIS_BUILD_DIR/deploy/github-pages
 #===========================================================================
 
 
@@ -72,20 +73,22 @@ before_deploy:
 
 deploy:
 
-  # on GitHub Pages..
+  # on GitHub Pages..       ( https://docs.travis-ci.com/user/deployment/pages/ )
   # ===========================================================================
   provider: pages
   skip-cleanup: true
   keep-history: true
   github-token: $GITHUB_TOKEN_02
+  local-dir: $TRAVIS_BUILD_DIR/deploy/github-pages
   on:
     branch: master
 
-  # on GitHub Release..
+  # on GitHub Release..     ( https://docs.travis-ci.com/user/deployment/releases/ )
   # ===========================================================================
   provider: releases
   api_key: $GITHUB_TOKEN_02
-  file: Main.dmg
+  file:
+        - Main.dmg
   overwrite: true
   skip_cleanup: true
   on:
