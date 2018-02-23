@@ -46,7 +46,10 @@ before_deploy:
   - chmod +x _package.command
   - ./_package.command
 #  - zip Main.zip Main.app
-  - zip -r Main.zip Main.app
+#  - zip -r Main.zip Main.app
+#   -y   store symbolic links as the link instead of the referenced file
+  - zip -r -y Main.zip Main.app
+  - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
 
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
   - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
