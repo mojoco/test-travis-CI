@@ -64,12 +64,19 @@ before_deploy:
 
 
 
+# ?..
 # prépare le déploiement ?..
 # cars le dossier 'target' disparait !!!
 # ===========================================================================
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
   - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
 
+  - mkdir $TRAVIS_BUILD_DIR/_BUILD/github-pages
+  - cp $TRAVIS_BUILD_DIR/deploy/github-pages/README.md  $TRAVIS_BUILD_DIR/_BUILD/github-pages
+  - cp Main.dmg                                         $TRAVIS_BUILD_DIR/_BUILD/github-pages
+  
+  
+  
 
 deploy:
 
@@ -80,7 +87,8 @@ deploy:
   skip-cleanup: true
   keep-history: true
   github-token: $GITHUB_TOKEN_02
-  local-dir: $TRAVIS_BUILD_DIR/deploy/github-pages
+# local-dir: $TRAVIS_BUILD_DIR/deploy/github-pages
+  local-dir: $TRAVIS_BUILD_DIR/_BUILD/github-pages
   on:
     branch: master
 
