@@ -45,6 +45,7 @@ before_deploy:
   - ./_build.command
   - chmod +x _package.command
   - ./_package.command
+  - zip Main.zip Main.app
 
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
   - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
