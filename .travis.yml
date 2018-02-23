@@ -43,6 +43,8 @@ before_deploy:
   - cd app
   - chmod +x _build.command
   - ./_build.command
+  - chmod +x _package.command
+  - ./_package.command
 
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
   - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
