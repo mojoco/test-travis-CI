@@ -40,25 +40,59 @@ before_deploy:
   
   - echo "==========================================================================="
 
+
+
+
+# build, package..
+# ===========================================================================
   - cd app
+  
   - chmod +x _build.command
   - ./_build.command
+  
   - chmod +x _package.command
   - ./_package.command
-#  - zip Main.zip Main.app
-#  - zip -r Main.zip Main.app
-#   -y   store symbolic links as the link instead of the referenced file
-  - zip -r -y Main.zip Main.app
-  - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
 
+  # zip..
+  # ( -y   store symbolic links as the link instead of the referenced file )
+  - zip -r -y Main.zip Main.app
+
+  # dmg.. (best compression)
+  - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
+  - cp Main.dmg $TRAVIS_BUILD_DIR/deploy/github-pages
+#===========================================================================
+
+
+
+# prépare le déploiement ?..
+# cars le dossier 'target' disparait !!!
+# ===========================================================================
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
   - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
 
 
 deploy:
+
+  # on GitHub Pages..       ( https://docs.travis-ci.com/user/deployment/pages/ )
+  # ===========================================================================
+#  - provider: pages
   provider: pages
   skip-cleanup: true
   keep-history: true
   github-token: $GITHUB_TOKEN_02
+#  local-dir: $TRAVIS_BUILD_DIR/deploy/github-pages
   on:
     branch: master
+
+  # on GitHub Release..     ( https://docs.travis-ci.com/user/deployment/releases/ )
+  # ===========================================================================
+#  - provider: releases
+#  api_key: $GITHUB_TOKEN_02
+#  file:
+#        - Main.dmg
+#                       overwrite: true
+#  skip_cleanup: true
+#  on:
+#    tags: true
+#    branch: master
+
