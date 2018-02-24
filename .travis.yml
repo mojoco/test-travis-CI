@@ -103,7 +103,7 @@ deploy:
   github-token: $GITHUB_TOKEN_02
 # local-dir: $TRAVIS_BUILD_DIR/deploy/github-pages
 #  local-dir: $TRAVIS_BUILD_DIR/_BUILD/github-pages
-  local-dir: $TRAVIS_BUILD_DIR
+  local-dir: deploy/github-pages
   on:
     branch: master
 
