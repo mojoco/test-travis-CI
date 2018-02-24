@@ -71,9 +71,9 @@ before_deploy:
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
   - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
 
-  - mkdir $TRAVIS_BUILD_DIR/_BUILD/github-pages
-  - cp $TRAVIS_BUILD_DIR/deploy/github-pages/README.md  $TRAVIS_BUILD_DIR/_BUILD/github-pages
-  - cp Main.dmg                                         $TRAVIS_BUILD_DIR/_BUILD/github-pages
+#  - mkdir $TRAVIS_BUILD_DIR/_BUILD/github-pages
+#  - cp $TRAVIS_BUILD_DIR/deploy/github-pages/README.md  $TRAVIS_BUILD_DIR/_BUILD/github-pages
+#  - cp Main.dmg                                         $TRAVIS_BUILD_DIR/_BUILD/github-pages
   
   - echo "==========================================================================="
   - echo ""
@@ -81,7 +81,7 @@ before_deploy:
   - echo ""
   - echo ""
   - echo ""
-  - ls $TRAVIS_BUILD_DIR/_BUILD/github-pages
+#  - ls $TRAVIS_BUILD_DIR/_BUILD/github-pages
   - echo ""
   - echo ""
   - echo ""
@@ -116,8 +116,6 @@ deploy:
   keep-history: true
   github-token: $GITHUB_TOKEN_02
   # local-dir: Directory to push to GitHub Pages, relative to the current directory, defaults to the current directory
-# local-dir: $TRAVIS_BUILD_DIR/deploy/github-pages
-#  local-dir: $TRAVIS_BUILD_DIR/_BUILD/github-pages
   local-dir: deploy/github-pages
   on:
     branch: master
