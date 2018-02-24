@@ -87,12 +87,26 @@ before_deploy:
   - echo ""
   - echo ""
   - echo ""
+  - ls $TRAVIS_BUILD_DIR/deploy/github-pages
+  - echo ""
+  - echo ""
+  - echo ""
+  - echo ""
+  - echo ""
   - echo "==========================================================================="
   - echo "==========================================================================="
   
   
 
 deploy:
+
+    # if single-deploy, don't use '-' !
+    #   provider: pages
+    #
+    # if multi-deploy, use list ('-') !
+    #   - provider: pages
+    #   - provider: releases
+    #   - provider: etc..
 
   # on GitHub Pages..       ( https://docs.travis-ci.com/user/deployment/pages/ )
   # ===========================================================================
