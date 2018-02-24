@@ -75,6 +75,20 @@ before_deploy:
   - cp $TRAVIS_BUILD_DIR/deploy/github-pages/README.md  $TRAVIS_BUILD_DIR/_BUILD/github-pages
   - cp Main.dmg                                         $TRAVIS_BUILD_DIR/_BUILD/github-pages
   
+  - echo "==========================================================================="
+  - echo ""
+  - echo ""
+  - echo ""
+  - echo ""
+  - echo ""
+  - ls $TRAVIS_BUILD_DIR/_BUILD/github-pages
+  - echo ""
+  - echo ""
+  - echo ""
+  - echo ""
+  - echo ""
+  - echo "==========================================================================="
+  - echo "==========================================================================="
   
   
 
@@ -88,7 +102,8 @@ deploy:
   keep-history: true
   github-token: $GITHUB_TOKEN_02
 # local-dir: $TRAVIS_BUILD_DIR/deploy/github-pages
-  local-dir: $TRAVIS_BUILD_DIR/_BUILD/github-pages
+#  local-dir: $TRAVIS_BUILD_DIR/_BUILD/github-pages
+  local-dir: $TRAVIS_BUILD_DIR
   on:
     branch: master
 
