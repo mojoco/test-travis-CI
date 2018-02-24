@@ -96,11 +96,12 @@ deploy:
 
   # on GitHub Pages..       ( https://docs.travis-ci.com/user/deployment/pages/ )
   # ===========================================================================
-#  - provider: pages
-  provider: pages
+  - provider: pages
+#  provider: pages
   skip-cleanup: true
   keep-history: true
   github-token: $GITHUB_TOKEN_02
+  # local-dir: Directory to push to GitHub Pages, relative to the current directory, defaults to the current directory
 # local-dir: $TRAVIS_BUILD_DIR/deploy/github-pages
 #  local-dir: $TRAVIS_BUILD_DIR/_BUILD/github-pages
   local-dir: deploy/github-pages
