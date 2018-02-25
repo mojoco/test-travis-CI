@@ -10,7 +10,7 @@
 
 ## AppVeyor
 
-https://ci.appveyor.com/api/projects/status/7b9i9vdy1dvpednt/branch/master?svg=true
+[![Build status](https://ci.appveyor.com/api/projects/status/7b9i9vdy1dvpednt?svg=true)](https://ci.appveyor.com/project/mojoco/test-travis-ci)
 
-https://ci.appveyor.com/api/projects/status/7b9i9vdy1dvpednt?svg=true
+[![Build status](https://ci.appveyor.com/api/projects/status/7b9i9vdy1dvpednt/branch/master?svg=true)](https://ci.appveyor.com/project/mojoco/test-travis-ci/branch/master)
 
