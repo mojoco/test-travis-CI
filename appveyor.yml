@@ -1,3 +1,8 @@
+# If you have appveyor.yml in your repo
+# it will override all settings made on the UI
+# unless explicitly disabled by Ignore appveyor.yml.
+
+
 version: 1.0.{build}
 
 build_script:
