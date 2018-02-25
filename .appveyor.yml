@@ -9,12 +9,19 @@ build_script:
 - cmd: echo "Yop"
 - cmd: dir    # C:\projects\test-travis-ci
 
+artifacts:
+  - path: .\app\Main.mxml
+    name: MyAppSrc
+
+after_build:
+  - ps: echo $artifacts
+
 test: off
 
 deploy:
 - provider: GitHub
   auth_token:
     secure: EI/GlJ98+tWum+ZpKOQ6yxS2kkbzMpntSejKovxuvy77tDYC9aKOBxLCcDA8CzPWciR2KOGo/CW55SAFcZiSMFw7JceWt9lS3T904UB/h0Y=
-  artifact: ./app/Main.mxml
+  artifact: .\app\Main.mxml
   draft: true
   prerelease: false
