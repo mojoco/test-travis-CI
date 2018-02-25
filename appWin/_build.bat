@@ -12,7 +12,8 @@
 echo.
 echo ------------
 
-	%SDK_HOME%\bin\amxmlc -version
+::	%SDK_HOME%\bin\amxmlc -version
+	call %SDK_HOME%\bin\amxmlc.bat -version
 	
 echo ------------
 echo.
@@ -20,7 +21,8 @@ echo.
 echo.
 echo ------------
 
-	%SDK_HOME%\bin\amxmlc Main.mxml
+::	%SDK_HOME%\bin\amxmlc Main.mxml
+	call %SDK_HOME%\bin\amxmlc.bat Main.mxml
 
 echo ------------
 echo.
