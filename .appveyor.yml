@@ -34,6 +34,7 @@ test: off
 artifacts:
   - path: app\Main.mxml
     name: mypackage
+  - path: appWin\Main.swf
 
 #---------------------------------#
 #     deployment configuration    #
@@ -45,7 +46,8 @@ deploy:
 - provider: GitHub
   auth_token:
     secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
-  artifact: app\Main.mxml
+#  artifact: app\Main.mxml
+  artifact: appWin\Main.swf
 #  artifact: mypackage
   draft: false
   prerelease: false
