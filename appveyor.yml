@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 build_script:
 - cmd: echo "Yop"
-- cmd: dir
+- cmd: dir    # C:\projects\test-travis-ci
 
 test: off
 
