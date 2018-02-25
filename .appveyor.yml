@@ -47,6 +47,7 @@ deploy:
   artifact: .\app\Main.mxml
   draft: false
   prerelease: false
+  repository: mojoco/test-travis-CI
   on:
     branch: master                # release from master branch only
 
