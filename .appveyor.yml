@@ -14,7 +14,7 @@ version: 1.0.{build}
 build_script:
 - cmd: echo "Yop"
 - cmd: dir    # C:\projects\test-travis-ci
-#- cmd: call appWin\_build.bat
+- cmd: call appWin\_build.bat
 - cmd: dir appWin
 
 after_build:
