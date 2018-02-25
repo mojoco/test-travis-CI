@@ -31,7 +31,7 @@ test: off
 #---------------------------------#
 
 artifacts:
-  - path: .\app\Main.mxml
+  - path: app\Main.mxml
 
 
 #---------------------------------#
@@ -44,7 +44,7 @@ deploy:
 - provider: GitHub
   auth_token:
     secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
-  artifact: .\app\Main.mxml
+  artifact: app\Main.mxml
   draft: false
   prerelease: false
   repository: mojoco/test-travis-CI
