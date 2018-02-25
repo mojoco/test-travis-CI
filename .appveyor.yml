@@ -51,5 +51,6 @@ deploy:
     branch: master                # release from master branch only
 
 # to run your custom scripts instead of provider deployments
-deploy_script:
-  - cmd: echo "deploy_script.."
+#deploy_script:
+#  - cmd: echo "deploy_script.."
+# ..
