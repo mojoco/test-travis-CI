@@ -17,8 +17,8 @@ build_script:
 - cmd: call appWin\_build.bat
 
 after_build:
-  - ps: echo $artifacts
-  - cmd: dir appWin
+#  - ps: echo $artifacts
+#  - cmd: dir appWin
 
 
 #---------------------------------#
