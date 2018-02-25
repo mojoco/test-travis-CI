@@ -18,6 +18,7 @@ build_script:
 
 after_build:
   - ps: echo $artifacts
+  - cmd: dir appWin
 
 
 #---------------------------------#
@@ -35,6 +36,7 @@ artifacts:
   - path: app\Main.mxml
     name: mypackage
   - path: appWin\Main.swf
+    name: MyAppWin
 
 #---------------------------------#
 #     deployment configuration    #
