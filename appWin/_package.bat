@@ -12,7 +12,7 @@
 echo.
 echo ------------
 
-	%SDK_HOME%\bin\adt -version
+	call %SDK_HOME%\bin\adt.bat -version
 	
 echo ------------
 echo.
@@ -20,7 +20,7 @@ echo.
 echo.
 echo ------------
 
-	%SDK_HOME%\bin\adt -package -storetype "pkcs12" -keystore "certificate.p12" -storepass "1234" -target bundle "Main.app" "Main-app.xml" "Main.swf"
+	call %SDK_HOME%\bin\adt.bat -package -storetype "pkcs12" -keystore "certificate.p12" -storepass "1234" -target bundle "Main.app" "Main-app.xml" "Main.swf"
 
 echo ------------
 echo.
