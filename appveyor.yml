@@ -1,6 +1,11 @@
 version: 1.0.{build}
+
 build_script:
 - cmd: echo "Yop"
+- cmd: dir
+
+test: off
+
 deploy:
 - provider: GitHub
   auth_token:
@@ -8,4 +13,3 @@ deploy:
   artifact: README.md
   draft: true
   prerelease: false
-  
