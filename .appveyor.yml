@@ -15,6 +15,7 @@ build_script:
 - cmd: echo "Yop"
 - cmd: dir    # C:\projects\test-travis-ci
 - cmd: call appWin\_build.bat
+- cmd: call appWin\_package.bat
 - cmd: cd C:\projects\test-travis-ci
 - cmd: dir appWin
 
@@ -39,6 +40,8 @@ artifacts:
     name: mypackage
   - path: appWin\Main.swf
     name: MyAppWin
+  - path: appWin\Main.exe
+    name: MyExeWin
 
 #---------------------------------#
 #     deployment configuration    #
@@ -51,7 +54,8 @@ deploy:
   auth_token:
     secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
 #  artifact: app\Main.mxml
-  artifact: appWin\Main.swf
+#  artifact: appWin\Main.swf
+  artifact: appWin\Main.exe
 #  artifact: mypackage
   draft: false
   prerelease: false
