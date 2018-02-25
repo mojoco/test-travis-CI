@@ -1,3 +1,11 @@
 version: 1.0.{build}
 build_script:
 - cmd: echo "Yop"
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: EI/GlJ98+tWum+ZpKOQ6yxS2kkbzMpntSejKovxuvy77tDYC9aKOBxLCcDA8CzPWciR2KOGo/CW55SAFcZiSMFw7JceWt9lS3T904UB/h0Y=
+  artifact: README.md
+  draft: true
+  prerelease: false
+  
