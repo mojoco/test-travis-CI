@@ -43,7 +43,7 @@ deploy:
   # Deploy to GitHub Releases
 - provider: GitHub
   auth_token:
-    secure: EI/GlJ98+tWum+ZpKOQ6yxS2kkbzMpntSejKovxuvy77tDYC9aKOBxLCcDA8CzPWciR2KOGo/CW55SAFcZiSMFw7JceWt9lS3T904UB/h0Y=
+    secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
   artifact: .\app\Main.mxml
   draft: false
   prerelease: false
