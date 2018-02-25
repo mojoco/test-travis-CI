@@ -32,7 +32,7 @@ test: off
 
 artifacts:
   - path: app\Main.mxml
-
+    name: mypackage
 
 #---------------------------------#
 #     deployment configuration    #
@@ -45,6 +45,7 @@ deploy:
   auth_token:
     secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
   artifact: app\Main.mxml
+#  artifact: mypackage
   draft: false
   prerelease: false
   repository: mojoco/test-travis-CI
