@@ -10,6 +10,6 @@ deploy:
 - provider: GitHub
   auth_token:
     secure: EI/GlJ98+tWum+ZpKOQ6yxS2kkbzMpntSejKovxuvy77tDYC9aKOBxLCcDA8CzPWciR2KOGo/CW55SAFcZiSMFw7JceWt9lS3T904UB/h0Y=
-  artifact: README.md
+  artifact: ./app/Main.mxml
   draft: true
   prerelease: false
