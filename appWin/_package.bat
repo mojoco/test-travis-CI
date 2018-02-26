@@ -20,9 +20,9 @@ echo.
 echo.
 echo ------------
 
-	call %SDK_HOME%\bin\adt.bat -package -storetype "pkcs12" -keystore "certificate.p12" -tsa "none" -storepass "1234" -target bundle "Main.app" "Main-app.xml" "Main.swf"
+	call %SDK_HOME%\bin\adt.bat -package -storetype "pkcs12" -keystore "certificate.p12" -tsa "none" -storepass "1234" -target bundle "Main.exe" "Main-app.xml" "Main.swf"
 	
-::	call %SDK_HOME%\bin\adt.bat -package -storetype "pkcs12" -keystore "certificate.p12" -storepass "1234" -target bundle "Main.app" "Main-app.xml" "Main.swf"
+::	call %SDK_HOME%\bin\adt.bat -package -storetype "pkcs12" -keystore "certificate.p12" -storepass "1234" -target bundle "Main.exe" "Main-app.xml" "Main.swf"
 
 echo ------------
 echo.
