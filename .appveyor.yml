@@ -40,9 +40,9 @@ test: off
 
 artifacts:
   - path: appWin\Main.swf
-    name: MyAppWin
+    name: AppSwf
   - path: appWin\Main.exe
-    name: My Windows executable
+    name: AppExe
     type: File
 
 #---------------------------------#
@@ -56,7 +56,7 @@ deploy:
   auth_token:
     secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
 #  artifact: appWin\Main.swf
-  artifact: appWin\Main.exe
+  artifact: AppSwf, AppExe
 #  artifact: mypackage
   draft: false
   prerelease: false
