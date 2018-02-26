@@ -53,7 +53,7 @@ deploy:
   auth_token:
     secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
 #  artifact: appWin\Main.swf
-  artifact: appWin\Main.zip
+  artifact: MyExeWin.zip
 #  artifact: mypackage
   draft: false
   prerelease: false
