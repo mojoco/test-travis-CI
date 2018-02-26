@@ -7,8 +7,8 @@
 version: 1.0.{build}
 
 platform:
-- x86
-#-x64
+#- x86
+- x64
 
 #---------------------------------#
 #       build configuration       #
@@ -16,7 +16,7 @@ platform:
 
 build_script:
 - cmd: echo "Yop"
-- ps: java -version
+#- ps: java -version
 - cmd: dir    # C:\projects\test-travis-ci
 - cmd: call appWin\_build.bat
 - cmd: cd C:\projects\test-travis-ci
