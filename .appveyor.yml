@@ -15,6 +15,7 @@ build_script:
 - cmd: echo "Yop"
 - cmd: dir    # C:\projects\test-travis-ci
 - cmd: call appWin\_build.bat
+- cmd: cd C:\projects\test-travis-ci
 - cmd: call appWin\_package.bat
 - cmd: cd C:\projects\test-travis-ci
 - cmd: dir appWin
