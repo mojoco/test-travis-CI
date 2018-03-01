@@ -42,6 +42,8 @@ before_deploy:
 #  - ls ~/.m2/repository/org/apache/commons
 #  - ls ~/.m2/repository/org/apache/maven
 #  - ls ~/.m2/repository/org/sonatype
+  - ls ~/.m2/repository/com/adobe
+  - ls ~/.m2/repository/com/adobe/bin
   
   - echo "==========================================================================="
 
