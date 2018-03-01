@@ -7,8 +7,8 @@ url="http://mirrors.gigenet.com/apache/flex/4.16.1/binaries/apache-flex-sdk-4.16
 targetFile="$HOME/flex-sdk.zip"
 targetFolder="$HOME/flex-sdk"
 
-# download..
-curl -o "$targetFile" "$url"
+# download..  (overwrite silently)
+curl -L "$url" > "$targetFile"
 # extract..
 unzip -q "$targetFile" -d "$targetFolder"
 # clean..
@@ -22,8 +22,8 @@ version="27.0"
 url="http://airdownload.adobe.com/air/mac/download/$version/AdobeAIRSDK.dmg"
 targetFile="$HOME/air-sdk.dmg"
 
-# download..
-curl -o "$targetFile" "$url"
+# download..  (overwrite silently)
+curl -L "$url" > "$targetFile"
 
 # overlay..
 # see: https://helpx.adobe.com/x-productkb/multi/how-overlay-air-sdk-flex-sdk.html
