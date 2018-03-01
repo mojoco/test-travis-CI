@@ -3,6 +3,9 @@
 # exit, if already installed..
 if [ "$HOME/flex-sdk" ]
 then
+	echo "[INFO] ------------------------------------------------------------------------"
+	echo "[INFO] Flex SDK already present !"
+	echo "[INFO] ------------------------------------------------------------------------"
 	exit 0
 fi
 
