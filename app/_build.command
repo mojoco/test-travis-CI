@@ -10,6 +10,7 @@
 # ----------------------------------------------------------------------------------
 #	SDK_HOME="/_SDKS/Flex/4.16.1_AIR27"
 	SDK_HOME="./flex-sdk"
+#	SDK_HOME="~/.m2/repository/com/adobe/flex"
 
 echo
 echo "------------"

@@ -44,6 +44,9 @@ before_deploy:
 #  - ls ~/.m2/repository/org/sonatype
   - ls ~/.m2/repository/com/adobe
   - ls ~/.m2/repository/com/adobe/flex
+  - ls ~/.m2/repository/com/adobe/flex/compiler
+  - ls ~/.m2/repository/com/adobe/flex/framework
+  - ls ~/.m2/repository/com/adobe/flexunit
   
   - echo "==========================================================================="
 
