@@ -15,6 +15,7 @@
 echo
 echo "------------"
 
+	chmod +x $SDK_HOME/bin/amxmlc
 	$SDK_HOME/bin/amxmlc -version
 	$SDK_HOME/bin/amxmlc Main.mxml
 
