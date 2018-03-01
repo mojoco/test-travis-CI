@@ -8,7 +8,7 @@ targetFile="$HOME/flex-sdk.zip"
 targetFolder="$HOME/flex-sdk"
 
 # download..
-wget -O "$targetFile" "$url"
+curl -o "$targetFile" "$url"
 # extract..
 unzip -q "$targetFile" -d "$targetFolder"
 # clean..
@@ -23,7 +23,7 @@ url="http://airdownload.adobe.com/air/mac/download/$version/AdobeAIRSDK.dmg"
 targetFile="$HOME/air-sdk.dmg"
 
 # download..
-wget -O "$targetFile" "$url"
+curl -o "$targetFile" "$url"
 
 # overlay..
 # see: https://helpx.adobe.com/x-productkb/multi/how-overlay-air-sdk-flex-sdk.html

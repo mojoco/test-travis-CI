@@ -9,7 +9,8 @@
 # SDK PATHS
 # ----------------------------------------------------------------------------------
 #	SDK_HOME="/_SDKS/Flex/4.16.1_AIR27"
-	SDK_HOME="./flex-sdk"
+#	SDK_HOME="./flex-sdk"
+	SDK_HOME="$HOME/flex-sdk"
 
 echo
 echo "------------"
