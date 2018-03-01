@@ -46,6 +46,79 @@
 					</dependency >
 				</dependencies >
 			</plugin >
+
+
+			<!-- NEW: adt-maven-plugin -->
+			<plugin>
+
+				<groupId>com.yelbota.plugins</groupId>
+				<artifactId>adt-maven-plugin</artifactId>
+				<version>1.0.7</version>
+				
+				<executions>
+				<execution>
+					<goals>
+						<goal>package</goal>
+					</goals>
+				</execution>
+				</executions>
+				
+				<configuration>
+				
+					<sdkVersion>3.5</sdkVersion>
+					
+					<target>ipa-debug</target>
+					<keystore>certificate.p12</keystore>
+					<storepass>******</storepass>
+					<tsa>none</tsa>
+
+					<!-- Required for ipa* targets -->
+					<provisioningProfile>myapp.mobileprovision</provisioningProfile>
+					
+					<!-- 
+						Optional. Application descriptor. By default is 
+						src/main/resources/application-descriptor.xml
+					-->
+					<descriptor>src/main/flex/Project-app.xml</descriptor>
+					
+					<!-- 
+						Optional. Replaces versionNumber in application descriptor. Useful
+						for CI. 0.0.0 by default. 
+					-->
+					<versionNumber>${build.number}</versionNumber>
+					
+					<!-- 
+						Optional. Replaces versionLabel in application descriptor. 
+						${project.version} by default.
+					-->
+					<versionLabel>${project.version}</versionLabel>
+					
+					<!-- 
+						By default includes lookedup in target/classes directory. Usualy
+						maven-resources-plugin copy here content of src/main/resources.
+						You can change this behaviour by setting <includesRoot> property. 
+					-->
+					<includes>
+						<include>icons</include>
+					</includes>
+					
+					<!-- 
+						Optional. Plugin home directory. For example "${user.home}/.adt" allows to keep SDK always unpacked for many projects.
+						${project.build.directory} by default.
+					-->
+					<pluginHome></pluginHome>
+
+					<!-- (iOS only, AIR 3.4 and higher) Enables the telemetry-based ActionScript sampler in iOS 
+						applications. Using this flag lets you profile the application with Adobe Scout. Although
+						Scout can profile any Flash platform content, enabling detailed telemetry gives you 
+						deep insight into ActionScript function timing, DisplayList, Stage3D rendering and more.
+						Note that using this flag will have a slight performance impact, so do not use it for
+						production applications.
+					-->
+					<sampler>false</sampler>
+				</configuration>
+			</plugin>
+
 		</plugins >
 	</build >
 
@@ -79,7 +152,16 @@
 				<enabled >false</enabled >
 			</snapshots >
 		</repository >
+
+		<!-- NEW: adt-maven-plugin -->
+		<repository>
+			<id>yelbota-dropbox-repo</id>
+			<url>http://dl.dropbox.com/u/36020926/maven/</url>
+			<snapshots><enabled>false</enabled></snapshots>
+			<releases><enabled>true</enabled></releases>
+		</repository>
 	</repositories >
+
 	<pluginRepositories >
 		<pluginRepository >
 			<id >flex-mojos-plugin-repository</id >
@@ -91,5 +173,14 @@
 				<enabled >false</enabled >
 			</snapshots >
 		</pluginRepository >
+
+		<!-- NEW: adt-maven-plugin -->
+		<pluginRepository>
+			<id>yelbota-dropbox-repo</id>
+			<url>http://dl.dropbox.com/u/36020926/maven/</url>
+			<snapshots><enabled>false</enabled></snapshots>
+			<releases><enabled>true</enabled></releases>
+		</pluginRepository>
 	</pluginRepositories >
+
 </project >

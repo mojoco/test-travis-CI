@@ -1,3 +1,9 @@
+# INFO
+#### Because Flexmojos allows you to build only *.air packages, the plugin below which could work with platform dependent AIR SDK and additionally build packages for mobile devices:
+adt-maven-plugin: https://github.com/fomkin/adt-maven-plugin
+
+---
+
 # Travis-CI ActionScript Demo
 <img src="https://cloud.githubusercontent.com/assets/138324/4870922/d9fe6306-618f-11e4-8c9b-1bcfde64a027.png" width=200 height=200 alt="Travis-CI As3 Flexmojos Icon" align="right" />
 

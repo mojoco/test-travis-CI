@@ -20,9 +20,7 @@ before_deploy:
   
   - echo "==========================================================================="
   - mvn -version  # Apache Maven 3.5.0
-  - set -e
-  - ant -version  # command not found
-  - set +e
+#  - ant -version  # PLANTE: command not found
   - echo "==========================================================================="
   - ls $TRAVIS_BUILD_DIR
 #  - echo "==========================================================================="
