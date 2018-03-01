@@ -15,9 +15,11 @@
 echo
 echo "------------"
 
-#	chmod +x $SDK_HOME/bin/amxmlc
-#	chmod +x $SDK_HOME/bin/mxmlc
-	find "$SDK_HOME" -type d -exec chmod 755 {} \;
+	chmod +x $SDK_HOME/bin/amxmlc
+	chmod +x $SDK_HOME/bin/mxmlc
+
+# ?..
+#	find "$SDK_HOME" -type d -exec chmod 755 {} \;
 
 	$SDK_HOME/bin/amxmlc -version
 	$SDK_HOME/bin/amxmlc Main.mxml
