@@ -1,3 +1,5 @@
+os: osx
+
 language: objective-c
 
 cache:
@@ -16,6 +18,9 @@ script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacO
 
 before_deploy:
   
+  - echo "==========================================================================="
+  - mvn -version
+  - ant -version
   - echo "==========================================================================="
   - ls $TRAVIS_BUILD_DIR
 #  - echo "==========================================================================="
