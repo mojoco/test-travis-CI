@@ -19,8 +19,10 @@ script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacO
 before_deploy:
   
   - echo "==========================================================================="
-  - mvn -version
-  - ant -version
+  - mvn -version  # Apache Maven 3.5.0
+  - set -e
+  - ant -version  # command not found
+  - set +e
   - echo "==========================================================================="
   - ls $TRAVIS_BUILD_DIR
 #  - echo "==========================================================================="
