@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# exit, if already installed..
+if [ "$HOME/flex-sdk" ]
+then
+	exit 0
+fi
 
 # Apache Flex SDK	( universal )
 # ===============
