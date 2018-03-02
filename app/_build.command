@@ -21,8 +21,8 @@ echo "------------"
 # ?..
 #	find "$SDK_HOME" -type d -exec chmod 755 {} \;
 
-	$SDK_HOME/bin/amxmlc -version
-	$SDK_HOME/bin/amxmlc Main.mxml
+	sudo $SDK_HOME/bin/amxmlc -version
+	sudo $SDK_HOME/bin/amxmlc Main.mxml
 
 #	amxmlc -version
 #	amxmlc Main.mxml
