@@ -18,7 +18,7 @@ before_script:
   # Download and install a specific Flash Player from the Adobe Archives:
   # http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
   - sh getFpFromArchive.sh 'http://download.macromedia.com/pub/flashplayer/installers/archive/fp_11.7.700.225_archive.zip'
-  - sh getFlexSdk.sh
+#  - sh getFlexSdk.sh
 
 script: mvn test -DflashPlayer.command=Flash\ Player\ Debugger.app/Contents/MacOS/Flash\ Player\ Debugger
 
