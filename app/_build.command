@@ -8,24 +8,16 @@
 
 # SDK PATHS
 # ----------------------------------------------------------------------------------
-#	SDK_HOME="/_SDKS/Flex/4.16.1_AIR27"
-#	SDK_HOME="./flex-sdk"
-	SDK_HOME="$HOME/flex-sdk"
+	SDK_HOME="./flex-sdk"
 
 echo
 echo "------------"
 
-	chmod +x $SDK_HOME/bin/amxmlc
-	chmod +x $SDK_HOME/bin/mxmlc
+	chmod +x "$SDK_HOME/bin/amxmlc"
+	chmod +x "$SDK_HOME/bin/mxmlc"
 
-# ?..
-#	find "$SDK_HOME" -type d -exec chmod 755 {} \;
-
-	sudo $SDK_HOME/bin/amxmlc -version
-	sudo $SDK_HOME/bin/amxmlc Main.mxml
-
-#	amxmlc -version
-#	amxmlc Main.mxml
+	"$SDK_HOME/bin/amxmlc" -version
+	"$SDK_HOME/bin/amxmlc" Main.mxml
 
 echo "------------"
 echo
