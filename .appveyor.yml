@@ -70,3 +70,6 @@ deploy:
 #deploy_script:
 #  - cmd: echo "deploy_script.."
 # ..
+
+
+# git subtree push --prefix dist origin gh-pages

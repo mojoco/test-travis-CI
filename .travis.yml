@@ -21,9 +21,13 @@ script:
   - ./_package.command
 
 before_deploy:
+  # swf..
+  - cp Main.swf $TRAVIS_BUILD_DIR/deploy/github-pages
+
   # zip..
   # ( -y   store symbolic links as the link instead of the referenced file )
   - zip -r -y Main.zip Main.app
+  - cp Main.zip $TRAVIS_BUILD_DIR/deploy/github-pages
 
   # dmg.. (best compression)
   - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
@@ -33,7 +37,7 @@ before_deploy:
   # prépare le déploiement ?..
   # cars le dossier 'target' disparait !!!
   # ===========================================================================
-  - mkdir $TRAVIS_BUILD_DIR/_BUILD
+#  - mkdir $TRAVIS_BUILD_DIR/_BUILD
 #  - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
 
   
