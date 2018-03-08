@@ -42,6 +42,7 @@ before_deploy:
 #  - mkdir $TRAVIS_BUILD_DIR/_BUILD
 #  - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
 
+  - cd $TRAVIS_BUILD_DIR
   
 
 deploy:
