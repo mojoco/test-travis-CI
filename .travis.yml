@@ -59,7 +59,7 @@ deploy:
 #  - provider: pages
   provider: pages
   skip-cleanup: true
-  keep-history: true
+  keep-history: false
   github-token: $GITHUB_TOKEN_02
   # local-dir: Directory to push to GitHub Pages, relative to the current directory, defaults to the current directory
   local-dir: deploy/github-pages
