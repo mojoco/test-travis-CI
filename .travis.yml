@@ -4,7 +4,7 @@ language: objective-c
 
 branches:
   only:
-  - master
+    - master
 
 cache:
   directories:
@@ -32,6 +32,8 @@ before_deploy:
   # dmg.. (best compression)
   - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
   - cp Main.dmg $TRAVIS_BUILD_DIR/deploy/github-pages
+
+  - ls "$TRAVIS_BUILD_DIR/deploy/github-pages"
 
 # ?..
   # prépare le déploiement ?..
