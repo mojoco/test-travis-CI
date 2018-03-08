@@ -34,7 +34,7 @@ before_deploy:
   # cars le dossier 'target' disparait !!!
   # ===========================================================================
   - mkdir $TRAVIS_BUILD_DIR/_BUILD
-  - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
+#  - cp -r $TRAVIS_BUILD_DIR/target/ $TRAVIS_BUILD_DIR/_BUILD
 
   
 
