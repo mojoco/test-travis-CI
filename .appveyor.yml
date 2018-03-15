@@ -56,8 +56,9 @@ deploy:
   # Deploy to GitHub Releases
 - provider: GitHub
   auth_token:
-#    secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
-    secure: r/3Rc5NOhaNOX6wS4/PTjxYoSlG+GyeqNGTkwCICpTRKibFLY+8LNC5vYlM3wlwlT6nSU7TH2PnEXRK7anFULPXlxlGdk+DXm8NEjcvqe5Y=
+#   secure: 8w0eWM2T2k6+tdjoZ/PpgmMHjYCLDRNldleQQisztMFuzi4IBlQuVI0yr1MQa6RQ
+#   secure: r/3Rc5NOhaNOX6wS4/PTjxYoSlG+GyeqNGTkwCICpTRKibFLY+8LNC5vYlM3wlwlT6nSU7TH2PnEXRK7anFULPXlxlGdk+DXm8NEjcvqe5Y=
+    secure: 9i6jrWpBi99QC1gYYQYMGIxyueGdDuTrbxKIkdwJJGjvv8nhiQeGk4V7lb1Wy6C4
 #  artifact: appWin\Main.swf
   artifact: AppSwf, AppExe
 #  artifact: mypackage
