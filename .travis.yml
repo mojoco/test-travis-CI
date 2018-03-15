@@ -126,7 +126,7 @@ deploy:
   provider: pages
   skip-cleanup: true
   keep-history: true
-  github-token: $GITHUB_TOKEN_02
+  github-token: $GITHUB_TOKEN
   # local-dir: Directory to push to GitHub Pages, relative to the current directory, defaults to the current directory
   local-dir: deploy/github-pages
   verbose: true
