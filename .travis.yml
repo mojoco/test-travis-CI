@@ -1,0 +1,43 @@
+os: osx
+
+language: objective-c
+
+branches:
+  only:
+  - master
+
+before_script:
+
+script:
+
+before_deploy:
+  - cd app
+  - chmod +x _build.command
+  - ./_build.command
+  - chmod +x _package.command
+  - ./_package.command
+
+  # zip..
+  - zip -r -y Main.zip Main.app
+
+  # dmg..
+  - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
+  - cp Main.dmg $TRAVIS_BUILD_DIR/deploy/github-pages
+  
+  # swf..
+  - cp Main.swf $TRAVIS_BUILD_DIR/deploy/github-pages
+
+  - echo "==========================================================================="
+  - ls $TRAVIS_BUILD_DIR/deploy/github-pages
+  - echo "==========================================================================="
+  
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GITHUB_TOKEN
+  local-dir: deploy/github-pages
+  verbose: true
+  on:
+    branch: master
