@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<WindowedApplication
+<s:Application
 	xmlns:fx="http://ns.adobe.com/mxml/2009"
-	xmlns="library://ns.adobe.com/flex/spark"
-	xmlns:controls="mx.controls.*"
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:mx="library://ns.adobe.com/flex/mx"
 	>
-			   
-    <layout>
-        <HorizontalLayout />
-    </layout>
-
-    <Button label="Hello World !"/>
-
-</WindowedApplication>
+	
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	
+	<s:Label text="Hello World !" horizontalCenter="0" verticalCenter="0" />
+	
+</s:Application>
