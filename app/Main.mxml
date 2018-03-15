@@ -3,6 +3,7 @@
 	xmlns:fx="http://ns.adobe.com/mxml/2009"
 	xmlns:s="library://ns.adobe.com/flex/spark"
 	xmlns:mx="library://ns.adobe.com/flex/mx"
+	bgColor='0xFF00FF'
 	>
 	
 	<s:layout>
