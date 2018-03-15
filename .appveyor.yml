@@ -66,6 +66,8 @@ deploy:
     secure: 9i6jrWpBi99QC1gYYQYMGIxyueGdDuTrbxKIkdwJJGjvv8nhiQeGk4V7lb1Wy6C4
 #  artifact: appWin\Main.swf
   artifact: AppSwf, AppExe
+  tag: release-test
+  force_update: true
   draft: false
   prerelease: false
   repository: mojoco/test-travis-CI
