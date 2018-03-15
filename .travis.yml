@@ -72,6 +72,9 @@ before_deploy:
   # dmg.. (best compression)
   - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
   - cp Main.dmg $TRAVIS_BUILD_DIR/deploy/github-pages
+  
+  # swf..
+  - cp Main.swf $TRAVIS_BUILD_DIR/deploy/github-pages
 #===========================================================================
 
 
