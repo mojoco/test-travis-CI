@@ -35,7 +35,7 @@ before_deploy:
   - textSearch=".*Travis CI.*"
   - textReplace="Travis CI (build $TRAVIS_BUILD_NUMBER)"
   - sedComportment=""
-  - destFile="$TRAVIS_BUILD_DIR/deploy/index.html"
+  - destFile="$TRAVIS_BUILD_DIR/deploy/github-pages/index.html"
   - sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
  
 
