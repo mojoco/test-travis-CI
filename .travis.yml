@@ -31,6 +31,13 @@ before_deploy:
   - ls $TRAVIS_BUILD_DIR/deploy/github-pages
   - echo "==========================================================================="
   
+  # modify.. (replace)
+  - textSearch=".*Travis CI.*"
+  - textReplace="#### Travis CI (build $TRAVIS_BUILD_NUMBER)"
+  - sedComportment=""
+  - destFile="./README.md"
+  - sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
+ 
 
 deploy:
   provider: pages
