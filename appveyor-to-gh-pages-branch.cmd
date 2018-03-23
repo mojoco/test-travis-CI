@@ -16,14 +16,6 @@ git config --global user.name "mojoco"
 :: what..
 git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
 
-echo.
-echo "========================================="
-dir
-echo "========================================="
-type ".\index.html"
-echo "========================================="
-echo.
-
 :: modify.. (replace)
 PowerShell -Command "(Get-Content '.\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 '.\index.html'"
 
