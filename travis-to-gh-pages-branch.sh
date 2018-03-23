@@ -13,9 +13,9 @@ rm -rf out || exit 0;
 mkdir out
 cd out
 
-#git config --local user.name "mojoco"
-#git config --local user.email "legrec@legrec.com"
+# permission..
 git config --global user.name "mojoco"
+#git config --global user.email "$GITHUB_EMAIL"
 git config --global user.email "legrec@legrec.com"
 
 # what..

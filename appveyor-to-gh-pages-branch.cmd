@@ -10,8 +10,8 @@ mkdir out
 cd out
 
 :: permission..
-git config --global user.email "%github_email%"
 git config --global user.name "mojoco"
+git config --global user.email "%github_email%"
 
 :: what..
 git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
