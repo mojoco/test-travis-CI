@@ -13,6 +13,9 @@ rm -rf out || exit 0;
 mkdir out
 cd out
 
+git config --local user.name "mojoco"
+git config --local user.email "legrec@legrec.com"
+
 # what..
 git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
 
