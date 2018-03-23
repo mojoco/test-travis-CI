@@ -29,11 +29,11 @@ sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 # GNU sed..
 #sed -i "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 
-git add "$destFile"
-git commit --message "Update GitHub Pages.[skip ci]"
+#git add "$destFile"
+#git commit --message "Update GitHub Pages.[skip ci]"
 
 # send..
-git push --force --quiet "https://$GITHUB_TOKEN@github.com/mojoco/test-travis-CI"
+#git push --force --quiet "https://$GITHUB_TOKEN@github.com/mojoco/test-travis-CI"
 
 # cleanup..
 cd ..
