@@ -16,4 +16,4 @@ deploy_script:
   - git config --global user.email %github_email%
   - git config --global user.name "mojoco"
   - ps: (Get-Content 'deploy\github-pages\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 'deploy\github-pages\index.html'
-  - git subtree push --prefix deploy\github-pages origin gh-pages
+  - git subtree push --prefix 'deploy\github-pages' origin gh-pages
