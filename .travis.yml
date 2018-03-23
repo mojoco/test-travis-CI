@@ -16,6 +16,7 @@ script:
   - ./_package.command
 
 after_script:
+  - echo "after script.."
 
 before_deploy:
 
