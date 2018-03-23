@@ -23,9 +23,9 @@ echo "========================================="
 echo.
 
 :: modify.. (replace)
-PowerShell -Command "(Get-Content 'deploy\github-pages\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 'deploy\github-pages\index.html'"
+PowerShell -Command "(Get-Content 'index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 'index.html'"
 
-git add 'deploy\github-pages\index.html'
+git add 'index.html'
 git commit --message "Update GitHub Pages.[skip ci]"
 
 :: send..
