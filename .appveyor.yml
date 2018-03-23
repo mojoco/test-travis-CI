@@ -1,0 +1,19 @@
+version: 1.0.{build}
+
+environment:
+  access_token:
+    secure: 9i6jrWpBi99QC1gYYQYMGIxyueGdDuTrbxKIkdwJJGjvv8nhiQeGk4V7lb1Wy6C4
+  github_email:
+    secure: 9KuPMPaDBiLnWjbCSsubN+MFp4a9LOyqPzWcN3zTecQ=
+
+build: off
+
+test: off
+
+deploy_script:
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email %github_email%
+  - git config --global user.name "mojoco"
+  - ps: (Get-Content 'deploy\github-pages\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 'deploy\github-pages\index.html'
+  - git subtree push --prefix deploy\github-pages origin gh-pages
