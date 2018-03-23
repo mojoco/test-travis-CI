@@ -38,7 +38,7 @@ before_deploy:
   - sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
  
 deploy:
-  - provider: script
+  provider: script
     script: bash ./travis-to-gh-pages-branch.sh
     on:
       branch: master
