@@ -7,32 +7,10 @@ branches:
   - master
 
 before_script:
+  - echo "before script.."
 
 script:
+  - echo "script.."
 
-#after_script:
-#  - echo "after script.."
-
-before_deploy:
-  - cd app
-  - chmod +x _build.command
-  - ./_build.command
-  - chmod +x _package.command
-  - ./_package.command
-
-  # zip..
-  - zip -r -y Main.zip Main.app
-
-  # dmg..
-  - hdiutil create -format UDZO -srcfolder Main.app Main.dmg
-  - cp Main.dmg $TRAVIS_BUILD_DIR/deploy/github-pages
-  
-  # swf..
-  - cp Main.swf $TRAVIS_BUILD_DIR/deploy/github-pages
- 
-deploy:
-  provider: script
-    script: bash ./travis-to-gh-pages-branch.sh
-    on:
-      branch: master
-  verbose: true
+after_script:
+  - echo "after script.."
