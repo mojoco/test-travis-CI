@@ -14,3 +14,9 @@ script:
 
 after_script:
   - echo "after script.."
+
+deploy:
+  - provider: script
+    script: bash ./travis-to-gh-pages-branch.sh
+    on:
+      branch: master
