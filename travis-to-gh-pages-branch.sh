@@ -15,6 +15,7 @@ cd out
 
 git config --local user.name "mojoco"
 git config --local user.email "legrec@legrec.com"
+#git commit --amend --reset-author
 
 # what..
 git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
@@ -29,7 +30,7 @@ sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 # GNU sed..
 #sed -i "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 
-#git add "$destFile"
+git add "$destFile"
 #git commit --message "Update GitHub Pages.[skip ci]"
 
 # send..
