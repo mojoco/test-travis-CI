@@ -13,8 +13,10 @@ rm -rf out || exit 0;
 mkdir out
 cd out
 
-git config --local user.name "mojoco"
-git config --local user.email "legrec@legrec.com"
+#git config --local user.name "mojoco"
+#git config --local user.email "legrec@legrec.com"
+git config --global user.name "mojoco"
+git config --global user.email "legrec@legrec.com"
 
 # what..
 git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
@@ -30,7 +32,7 @@ sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 #sed -i "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 
 git add "$destFile"
-git commit --amend --reset-author
+#git commit --amend --reset-author
 git commit --message "Update GitHub Pages.[skip ci]"
 
 # send..
