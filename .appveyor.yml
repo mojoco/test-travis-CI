@@ -7,7 +7,7 @@ branches:
 environment:
   GITHUB_TOKEN:
     secure: 9i6jrWpBi99QC1gYYQYMGIxyueGdDuTrbxKIkdwJJGjvv8nhiQeGk4V7lb1Wy6C4
-  github_email:
+  GITHUB_EMAIL:
     secure: 9KuPMPaDBiLnWjbCSsubN+MFp4a9LOyqPzWcN3zTecQ=
 
 build: off
