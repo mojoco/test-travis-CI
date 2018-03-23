@@ -29,13 +29,6 @@ before_deploy:
   
   # swf..
   - cp Main.swf $TRAVIS_BUILD_DIR/deploy/github-pages
-
-  # modify.. (replace)
-  - textSearch=".*Travis CI.*"
-  - textReplace="Travis CI (build $TRAVIS_BUILD_NUMBER)"
-  - sedComportment=""
-  - destFile="$TRAVIS_BUILD_DIR/deploy/github-pages/index.html"
-  - sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
  
 deploy:
   provider: script
