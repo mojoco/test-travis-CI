@@ -14,14 +14,15 @@ script:
 
 after_script:
   - echo "after script.."
+  - chmod +x ./travis-to-gh-pages-branch.sh
+  - sh ./travis-to-gh-pages-branch.sh
 
-before_deploy:
-    - chmod +x ./travis-to-gh-pages-branch.sh
+#before_deploy:
 
-deploy:
-  - provider: script
+#deploy:
+#  - provider: script
 #   script: bash ./travis-to-gh-pages-branch.sh
-    script: sh ./travis-to-gh-pages-branch.sh
+#    script: sh ./travis-to-gh-pages-branch.sh
 #   script: chmod +x ./travis-to-gh-pages-branch.sh && sh ./travis-to-gh-pages-branch.sh
-    on:
-      branch: master
+#    on:
+#      branch: master
