@@ -6,19 +6,19 @@ branches:
   only:
   - master
 
-before_script:
-  - cd app
-  - chmod +x _build.command
-  - chmod +x _package.command
+#before_script:
 
-script:
-  - ./_build.command
-  - ./_package.command
+#script:
 
-after_script:
-  - echo "after script.."
+#after_script:
+#  - echo "after script.."
 
 before_deploy:
+  - cd app
+  - chmod +x _build.command
+  - ./_build.command
+  - chmod +x _package.command
+  - ./_package.command
 
   # zip..
   - zip -r -y Main.zip Main.app
