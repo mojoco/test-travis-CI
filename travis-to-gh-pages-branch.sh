@@ -19,8 +19,13 @@ git config --global user.name "mojoco"
 git config --global user.email "legrec@legrec.com"
 
 # what..
-#git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
-git clone --branch --orphan "gh-pages" https://github.com/mojoco/test-travis-CI.git .
+git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
+#git clone --branch --orphan "gh-pages" https://github.com/mojoco/test-travis-CI.git .
+
+echo "================================================="
+ls
+echo "================================================="
+echo
 
 # modify.. (replace)
 textSearch=".*Travis CI.*"
