@@ -6,9 +6,9 @@ branches:
   only:
   - master
 
-#before_script:
+before_script:
 
-#script:
+script:
 
 #after_script:
 #  - echo "after script.."
