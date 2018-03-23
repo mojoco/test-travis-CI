@@ -10,15 +10,11 @@ mkdir out
 cd out
 
 :: permission..
-git config --global user.email "mojoco@gmail.com"
+git config --global user.email "%github_email%"
 git config --global user.name "mojoco"
 
 :: what..
 git clone --branch "gh-pages" https://github.com/mojoco/lab-ci.git .
-
-:: modify.. (append)
-::echo:>>README.md
-::echo ^#^#^#^# AppVeyor CI (build %appveyor_build_version%)>>README.md
 
 :: modify.. (replace)
 PowerShell -Command "(Get-Content 'deploy\github-pages\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 'deploy\github-pages\index.html'"
