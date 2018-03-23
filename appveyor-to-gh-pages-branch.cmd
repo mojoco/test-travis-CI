@@ -17,7 +17,7 @@ git config --global user.name "mojoco"
 git clone --branch "gh-pages" https://github.com/mojoco/lab-ci.git .
 
 :: modify.. (replace)
-PowerShell -Command "(Get-Content 'deploy\github-pages\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 'deploy\github-pages\index.html'"
+::PowerShell -Command "(Get-Content 'deploy\github-pages\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 'deploy\github-pages\index.html'"
 
 git add 'deploy\github-pages\index.html'
 git commit --message "Update GitHub Pages.[skip ci]"
