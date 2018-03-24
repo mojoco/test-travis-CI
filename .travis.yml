@@ -9,10 +9,10 @@ branches:
 install:
 # - wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O /tmp/4.16.1-AIR-28-minimal-macOS.tar.gz
   - wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O $TRAVIS_BUILD_DIR/flex-sdk.tar.gz
-# - mkdir $TRAVIS_BUILD_DIR/flex-sdk
+  - mkdir -p $TRAVIS_BUILD_DIR/flex-sdk
 # - tar -xvf /tmp/4.16.1-AIR-28-minimal-macOS.tar.gz
-# - tar -xvf $TRAVIS_BUILD_DIR/flex-sdk.tar.gz --directory $TRAVIS_BUILD_DIR/flex-sdk
-  - tar -xvf $TRAVIS_BUILD_DIR/flex-sdk.tar.gz -C $TRAVIS_BUILD_DIR/flex-sdk
+  - tar -xvf $TRAVIS_BUILD_DIR/flex-sdk.tar.gz --directory $TRAVIS_BUILD_DIR/flex-sdk --strip-components=1
+# - tar -xvf $TRAVIS_BUILD_DIR/flex-sdk.tar.gz -C $TRAVIS_BUILD_DIR/flex-sdk --strip-components=1
 # - export PATH=$PATH:$PWD/4.16.1-AIR-28-minimal-macOS/bin/
   - export FLEX_HOME=$TRAVIS_BUILD_DIR/flex-sdk
   - export PATH=$PATH:$FLEX_HOME/bin/
