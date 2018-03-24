@@ -26,8 +26,9 @@ script:
   - cd appMacOS
 # - chmod +x _build.command
   - sh ./_build.command
+  # deploy..
+  - cd $TRAVIS_BUILD_DIR
+  - sh ./travis-to-gh-pages-branch.sh
 
 after_script:
   - echo "after script.."
-  - cd $TRAVIS_BUILD_DIR
-  - sh ./travis-to-gh-pages-branch.sh
