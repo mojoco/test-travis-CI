@@ -31,9 +31,11 @@ sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 #sed -i "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 git add "$destFile"
 
+rm -f "Main.swf"
 cp "$TRAVIS_BUILD_DIR/appMacOS/Main.swf" .
 git add "Main.swf"
 
+rm -f "Main.dmg"
 hdiutil create -format UDZO -srcfolder "$TRAVIS_BUILD_DIR/appMacOS/Main.app" "./Main.dmg"
 git add "Main.dmg"
 
