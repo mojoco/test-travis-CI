@@ -29,14 +29,16 @@ destFile="./index.html"
 sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 # GNU sed..
 #sed -i "s/$textSearch/$textReplace/$sedComportment" "$destFile"
+git add "$destFile"
 
 cp "$TRAVIS_BUILD_DIR/appMacOS/Main.swf" .
-
-git add "$destFile"
 git add "Main.swf"
-git commit --message "Update GitHub Pages.[skip ci]"
+
+hdiutil create -format UDZO -srcfolder $TRAVIS_BUILD_DIR/Main.app ./Main.dmg
+git add "Main.dmg"
 
 # send..
+git commit --message "Update GitHub Pages.[skip ci]"
 git push --force --quiet "https://$GITHUB_TOKEN@github.com/mojoco/test-travis-CI"
 
 # cleanup..

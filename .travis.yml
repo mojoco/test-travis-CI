@@ -23,9 +23,10 @@ before_script:
 
 script:
   - echo "script.."
-  - cd appMacOS
+  - cd ./appMacOS
 # - chmod +x _build.command
   - sh ./_build.command
+  - sh ./_package.command
   # deploy..
   - cd $TRAVIS_BUILD_DIR
   - sh ./travis-to-gh-pages-branch.sh
