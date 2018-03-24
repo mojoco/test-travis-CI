@@ -34,8 +34,8 @@ git add "$destFile"
 cp "$TRAVIS_BUILD_DIR/appMacOS/Main.swf" .
 git add "Main.swf"
 
-hdiutil create -format UDZO -srcfolder $TRAVIS_BUILD_DIR/appMacOS/Main.app ./Main.dmg
-git add "Main.dmg"
+#hdiutil create -format UDZO -srcfolder "$TRAVIS_BUILD_DIR/appMacOS/Main.app" "./Main.dmg"
+#git add "Main.dmg"
 
 # send..
 git commit --message "Update GitHub Pages.[skip ci]"
