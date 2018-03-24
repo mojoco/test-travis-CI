@@ -17,9 +17,8 @@ before_script:
 
 script:
   - echo "script.."
-  - echo "$FLEX_HOME/bin/mxmlc -version"
-  - echo "mxmlc -version"
-  - echo mxmlc -version
+  - "$FLEX_HOME/bin/mxmlc -version"
+  - mxmlc -version
 
 after_script:
   - echo "after script.."
