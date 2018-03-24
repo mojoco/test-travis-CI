@@ -29,4 +29,5 @@ script:
 
 after_script:
   - echo "after script.."
+  - cd $TRAVIS_BUILD_DIR
   - sh ./travis-to-gh-pages-branch.sh
