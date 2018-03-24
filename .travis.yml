@@ -7,10 +7,18 @@ branches:
   - master
 
 before_script:
+  - wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O /tmp/4.16.1-AIR-28-minimal-macOS.tar.gz
+  - tar -xvf /tmp/4.16.1-AIR-28-minimal-macOS.tar.gz
+  - export PATH=$PATH:$PWD/4.16.1-AIR-28-minimal-macOS/bin/
+  - export FLEX_HOME=/tmp/4.16.1-AIR-28-minimal-macOS
+
+before_script:
   - echo "before script.."
 
 script:
   - echo "script.."
+  - echo "$FLEX_HOME/bin/mxmlc -version"
+  - echo "mxmlc -version"
 
 after_script:
   - echo "after script.."
