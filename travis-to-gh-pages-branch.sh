@@ -34,7 +34,7 @@ git add "$destFile"
 cp "$TRAVIS_BUILD_DIR/appMacOS/Main.swf" .
 git add "Main.swf"
 
-hdiutil create -format UDZO -srcfolder $TRAVIS_BUILD_DIR/Main.app ./Main.dmg
+hdiutil create -format UDZO -srcfolder $TRAVIS_BUILD_DIR/appMacOS/Main.app ./Main.dmg
 git add "Main.dmg"
 
 # send..
