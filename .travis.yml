@@ -19,13 +19,13 @@ cache:
 
 before_script:
   - echo "before script.."
+  - mxmlc -version
 
 script:
   - echo "script.."
-#  - ls $FLEX_HOME
-#  - ls $FLEX_HOME/bin
-  - "$FLEX_HOME/bin/mxmlc -version"
-  - mxmlc -version
+  - cd appMacOS
+# - chmod +x _build.command
+  - sh ./_build.command
 
 after_script:
   - echo "after script.."
