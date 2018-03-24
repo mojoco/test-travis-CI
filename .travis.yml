@@ -23,10 +23,10 @@ before_script:
 
 script:
   - echo "script.."
-  - cd ./appMacOS
+  - cd $TRAVIS_BUILD_DIR/appMacOS
 # - chmod +x ./_build.command
   - sh ./_build.command
-  - cd $TRAVIS_BUILD_DIR
+  - cd $TRAVIS_BUILD_DIR/appMacOS
   - chmod +x ./_package.command
   - sh ./_package.command
   # deploy..
