@@ -23,7 +23,8 @@ git add index.html
 git commit --message "Update GitHub Pages.[skip ci]"
 
 :: send..
-git push --force --quiet "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
+::git push --force --quiet "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
+git push "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
 
 :: cleanup..
 cd ..
