@@ -7,10 +7,18 @@ branches:
   - master
 
 install:
-  - wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O /tmp/4.16.1-AIR-28-minimal-macOS.tar.gz
-  - tar -xvf /tmp/4.16.1-AIR-28-minimal-macOS.tar.gz
-  - export PATH=$PATH:$PWD/4.16.1-AIR-28-minimal-macOS/bin/
-  - export FLEX_HOME=/tmp/4.16.1-AIR-28-minimal-macOS
+# - wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O /tmp/4.16.1-AIR-28-minimal-macOS.tar.gz
+  - wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O $TRAVIS_BUILD_DIR/flex-sdk.tar.gz
+  - mkdir $TRAVIS_BUILD_DIR/flex-sdk
+# - tar -xvf /tmp/4.16.1-AIR-28-minimal-macOS.tar.gz
+  - tar -xvf $TRAVIS_BUILD_DIR/flex-sdk.tar.gz --directory $TRAVIS_BUILD_DIR/flex-sdk
+# - export PATH=$PATH:$PWD/4.16.1-AIR-28-minimal-macOS/bin/
+  - export FLEX_HOME=$TRAVIS_BUILD_DIR/flex-sdk
+  - export PATH=$PATH:$FLEX_HOME/bin/
+
+cache:
+  directories:
+    - $TRAVIS_BUILD_DIR/flex-sdk
 
 before_script:
   - echo "before script.."
