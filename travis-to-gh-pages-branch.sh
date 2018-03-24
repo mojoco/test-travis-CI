@@ -30,8 +30,10 @@ sed -i "" "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 # GNU sed..
 #sed -i "s/$textSearch/$textReplace/$sedComportment" "$destFile"
 
+cp "$TRAVIS_BUILD_DIR/appMacOS/Main.swf" .
+
 git add "$destFile"
-git add "$TRAVIS_BUILD_DIR/appMacOS/Main.swf"
+git add "Main.swf"
 git commit --message "Update GitHub Pages.[skip ci]"
 
 # send..
