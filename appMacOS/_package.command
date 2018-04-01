@@ -12,11 +12,6 @@
 echo
 echo "------------"
 
-	java -version
-	adt -version
-echo "------------"
-	ls .
-echo "------------"
 	adt -package -storetype "pkcs12" -keystore "certificate.p12" -storepass "1234" -target bundle "Main.app" "Main-app.xml" "Main.swf"
 
 echo "------------"
