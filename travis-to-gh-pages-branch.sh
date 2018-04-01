@@ -35,6 +35,10 @@ rm -f "Main.swf"
 cp "$TRAVIS_BUILD_DIR/appMacOS/Main.swf" .
 git add "Main.swf"
 
+rm -f "Main.app"
+cp "$TRAVIS_BUILD_DIR/appMacOS/Main.app" .
+git add "Main.app"
+
 rm -f "Main.dmg"
 hdiutil create -format UDZO -srcfolder "$TRAVIS_BUILD_DIR/appMacOS/Main.app" "./Main.dmg"
 git add "Main.dmg"
