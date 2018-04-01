@@ -10,6 +10,6 @@
 		<s:BasicLayout/>
 	</s:layout>
 	
-	<s:Label text="Hello World !" horizontalCenter="0" verticalCenter="0" />
+	<s:Label text="Hello World !.." horizontalCenter="0" verticalCenter="0" />
 	
 </s:Application>

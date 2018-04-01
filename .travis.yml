@@ -20,9 +20,9 @@ cache:
 
 before_script:
   - echo "before script.."
-	- java -version
+  - java -version
   - mxmlc -version
-	- adt -version
+  - adt -version
 
 script:
   - echo "script.."
