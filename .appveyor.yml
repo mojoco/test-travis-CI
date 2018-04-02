@@ -16,14 +16,15 @@ install:
   - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
   - ps: wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O $env:APPVEYOR_BUILD_FOLDER/flex-sdk.tar.gz
   - ps: mkdir -p $env:APPVEYOR_BUILD_FOLDER/flex-sdk
-  - ps: tar -xvf $env:APPVEYOR_BUILD_FOLDER/flex-sdk.tar.gz --directory $env:APPVEYOR_BUILD_FOLDER/flex-sdk --strip-components=1
+#  - ps: tar -xvf $env:APPVEYOR_BUILD_FOLDER/flex-sdk.tar.gz --directory $env:APPVEYOR_BUILD_FOLDER/flex-sdk --strip-components=1
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
 
-  - ps: export FLEX_HOME=$TRAVIS_BUILD_DIR/flex-sdk
-  - ps: export PATH=$PATH:$FLEX_HOME/bin/
+#  - ps: export FLEX_HOME=$env:APPVEYOR_BUILD_FOLDER/flex-sdk
+#  - ps: export PATH=$PATH:$FLEX_HOME/bin/
 
 cache:
 #  - C:\ProgramData\chocolatey\lib -> appveyor.yml
+#  - '%APPVEYOR_BUILD_FOLDER%\flex-sdk'
 
 build: off
 
