@@ -13,7 +13,8 @@ environment:
 install:
   - ps: echo "install.."
   - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
-  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER "
+  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
+  - ps: ls $env:APPVEYOR_BUILD_FOLDER
 
 cache:
 #  - C:\ProgramData\chocolatey\lib -> appveyor.yml
