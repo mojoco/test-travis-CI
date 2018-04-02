@@ -39,7 +39,7 @@ git add "Main.swf"
 #rm -f "Main.app"
 rm -rf "Main.app"
 #cp -r "$TRAVIS_BUILD_DIR/appMacOS/Main.app" .
-cp -r --no-dereference --preserve=links "$TRAVIS_BUILD_DIR/appMacOS/Main.app" .
+cp -RL "$TRAVIS_BUILD_DIR/appMacOS/Main.app" .
 git add "Main.app"
 
 rm -f "Main.dmg"
