@@ -29,8 +29,11 @@ install:
 #  - ps: export PATH=$PATH:$FLEX_HOME/bin/
   - cmd: set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\flex-sdk
   - cmd: set PATH=%PATH%;%FLEX_HOME%\bin
+  - cmd: set PATH=%PATH%;%APPVEYOR_BUILD_FOLDER%\flex-sdk\bin
 
-  - cmd: mxmlc -version
+  - ps: ls $env:FLEX_HOME
+  - cmd: dir %FLEX_HOME%
+#  - cmd: mxmlc -version
 
 cache:
 #  - C:\ProgramData\chocolatey\lib -> appveyor.yml
