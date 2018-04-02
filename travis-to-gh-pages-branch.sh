@@ -35,8 +35,9 @@ rm -f "Main.swf"
 cp "$TRAVIS_BUILD_DIR/appMacOS/Main.swf" .
 git add "Main.swf"
 
+#rmdir -p "Main.app"
 #rm -f "Main.app"
-rmdir -p "Main.app"
+rm -rf "Main.app"
 #cp -r "$TRAVIS_BUILD_DIR/appMacOS/Main.app" .
 cp -r --no-dereference --preserve=links "$TRAVIS_BUILD_DIR/appMacOS/Main.app" .
 git add "Main.app"
