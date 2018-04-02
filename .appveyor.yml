@@ -10,6 +10,13 @@ environment:
   GITHUB_EMAIL:
     secure: 9KuPMPaDBiLnWjbCSsubN+MFp4a9LOyqPzWcN3zTecQ=
 
+install:
+  - ps: echo "install.."
+  - ps: echo "APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER% "
+
+cache:
+#  - C:\ProgramData\chocolatey\lib -> appveyor.yml
+
 build: off
 
 test: off

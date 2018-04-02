@@ -35,10 +35,7 @@ rm -f "Main.swf"
 cp "$TRAVIS_BUILD_DIR/appMacOS/Main.swf" .
 git add "Main.swf"
 
-#rmdir -p "Main.app"
-#rm -f "Main.app"
 rm -rf "Main.app"
-#cp -r "$TRAVIS_BUILD_DIR/appMacOS/Main.app" .
 cp -RL "$TRAVIS_BUILD_DIR/appMacOS/Main.app" .
 git add "Main.app"
 
@@ -48,9 +45,6 @@ git add "Main.dmg"
 
 # send..
 git commit --message "Update GitHub Pages.[skip ci]"
-
-# CONFLIT ??? !!! ...
-#git push --force --quiet "https://$GITHUB_TOKEN@github.com/mojoco/test-travis-CI"
 git push "https://$GITHUB_TOKEN@github.com/mojoco/test-travis-CI"
 
 # cleanup..
