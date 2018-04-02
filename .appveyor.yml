@@ -14,6 +14,7 @@ install:
   - ps: echo "install.."
   - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
   - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
+  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O $env:APPVEYOR_BUILD_FOLDER/flex-sdk.tar.gz
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
 
 cache:
