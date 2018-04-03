@@ -26,7 +26,7 @@ install:
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
 #  - ps: jar -xf $env:APPVEYOR_BUILD_FOLDER\flex-sdk.zip -C $env:APPVEYOR_BUILD_FOLDER\flex-sdk
   - cmd: unzip %APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip
-  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows" "%APPVEYOR_BUILD_FOLDER%\flex-sdk"
+  - cmd: rename %APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows %APPVEYOR_BUILD_FOLDER%\flex-sdk
 #  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\flex-sdk.zip -d %APPVEYOR_BUILD_FOLDER%\flex-sdk
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
 
