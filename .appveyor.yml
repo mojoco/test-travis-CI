@@ -9,6 +9,7 @@ environment:
     secure: 9i6jrWpBi99QC1gYYQYMGIxyueGdDuTrbxKIkdwJJGjvv8nhiQeGk4V7lb1Wy6C4
   GITHUB_EMAIL:
     secure: 9KuPMPaDBiLnWjbCSsubN+MFp4a9LOyqPzWcN3zTecQ=
+  SDK_TARGET: 4.15.0-AIR-22-minimal-Windows
 
 install:
 #  - ps: echo "install.."
@@ -20,7 +21,7 @@ install:
 #  - ps: tar -xvf $env:APPVEYOR_BUILD_FOLDER/flex-sdk.tar.gz --directory $env:APPVEYOR_BUILD_FOLDER/flex-sdk --strip-components=1
 
 #  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip -O $env:APPVEYOR_BUILD_FOLDER/flex-sdk.zip
-  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip
+  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip -O $env:APPVEYOR_BUILD_FOLDER\4.15.0-AIR-22-minimal-Windows.zip
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
 #  - ps: jar -xf $env:APPVEYOR_BUILD_FOLDER\flex-sdk.zip -C $env:APPVEYOR_BUILD_FOLDER\flex-sdk
 # -j flattens the directory structure
