@@ -43,7 +43,7 @@ install:
 
   - ps: ls $env:FLEX_HOME
   - cmd: dir %FLEX_HOME%
-#  - cmd: mxmlc -version
+  - cmd: mxmlc -version
 
 cache:
 #  - C:\ProgramData\chocolatey\lib -> appveyor.yml
