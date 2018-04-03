@@ -23,7 +23,8 @@ install:
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
 #  - ps: jar -xf $env:APPVEYOR_BUILD_FOLDER\flex-sdk.zip -C $env:APPVEYOR_BUILD_FOLDER\flex-sdk
 # -j flattens the directory structure
-  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\flex-sdk.zip -d -j %APPVEYOR_BUILD_FOLDER%\flex-sdk
+#  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\flex-sdk.zip -d %APPVEYOR_BUILD_FOLDER%\flex-sdk
+  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\flex-sdk.zip -dj %APPVEYOR_BUILD_FOLDER%\flex-sdk
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
 
 #  - ps: export FLEX_HOME=$env:APPVEYOR_BUILD_FOLDER/flex-sdk
