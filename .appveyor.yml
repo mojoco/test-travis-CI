@@ -13,35 +13,20 @@ environment:
   SDK_TARGET: 4.15.0-AIR-22-minimal-Windows
 
 install:
-#  - ps: echo "install.."
-  - ps: echo "ps install - $env:SDK_TARGET"
-#  - ps: echo 'ps install:' $env:SDK_TARGET
-#  - ps: echo 'ps install:' $SDK_TARGET
-  - ps: echo $env:SDK_TARGET
-  - cmd: echo 'cmd install:' %SDK_TARGET%
+  - ps: echo "install - $env:SDK_TARGET"
+  - ps: echo "install:/ $env:SDK_TARGET"
+  - cmd: echo 'install:' %SDK_TARGET%
 #  - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
 #  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
 
-#  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.16.1-AIR-28-minimal-macOS.tar.gz -O $env:APPVEYOR_BUILD_FOLDER/flex-sdk.tar.gz
-#  - ps: mkdir -p $env:APPVEYOR_BUILD_FOLDER/flex-sdk
-#  - ps: tar -xvf $env:APPVEYOR_BUILD_FOLDER/flex-sdk.tar.gz --directory $env:APPVEYOR_BUILD_FOLDER/flex-sdk --strip-components=1
-
-#  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip -O $env:APPVEYOR_BUILD_FOLDER/flex-sdk.zip
   - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip -O $env:APPVEYOR_BUILD_FOLDER\4.15.0-AIR-22-minimal-Windows.zip
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
-#  - ps: jar -xf $env:APPVEYOR_BUILD_FOLDER\flex-sdk.zip -C $env:APPVEYOR_BUILD_FOLDER\flex-sdk
   - cmd: unzip %APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip
-#  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-4.15.0-AIR-22-minimal-Windows" "%APPVEYOR_BUILD_FOLDER%\flex-sdk"
-#  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\flex-sdk-4.15.0-AIR-22-minimal-Windows" "%APPVEYOR_BUILD_FOLDER%\flex-sdk"
   - cmd: rename "%APPVEYOR_BUILD_FOLDER%\flex-sdk-4.15.0-AIR-22-minimal-Windows" "flex-sdk"
-#  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\flex-sdk.zip -d %APPVEYOR_BUILD_FOLDER%\flex-sdk
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
 
-#  - ps: export FLEX_HOME=$env:APPVEYOR_BUILD_FOLDER/flex-sdk
-#  - ps: export PATH=$PATH:$FLEX_HOME/bin/
   - cmd: set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\flex-sdk
   - cmd: set PATH=%PATH%;%FLEX_HOME%\bin
-#  - cmd: set PATH=%PATH%;%APPVEYOR_BUILD_FOLDER%\flex-sdk\bin
 
   - ps: ls $env:FLEX_HOME
   - cmd: dir %FLEX_HOME%
