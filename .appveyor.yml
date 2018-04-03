@@ -14,8 +14,10 @@ environment:
 
 install:
 #  - ps: echo "install.."
-  - ps: echo 'ps install:' $env:SDK_TARGET
-  - ps: echo 'ps install:' $SDK_TARGET
+  - ps: echo "ps install: $env:SDK_TARGET"
+#  - ps: echo 'ps install:' $env:SDK_TARGET
+#  - ps: echo 'ps install:' $SDK_TARGET
+  - ps: echo $env:SDK_TARGET
   - cmd: echo 'cmd install:' %SDK_TARGET%
 #  - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
 #  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
