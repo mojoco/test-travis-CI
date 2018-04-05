@@ -17,17 +17,18 @@ install:
 #  - ps: echo "install $env:SDK_TARGET"
 #  - cmd: echo install %SDK_TARGET%
 #  - appveyor-install.cmd
-  - ps: .\appveyor-install.ps1
+#  - ps: .\appveyor-install.ps1
+#  - ps: '& ".\appveyor-install.ps1"'
 
   # is cached ?..
 
 # OK
 #  - ps: wget https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
-#  - ps: |
-#      if ( !(Test-Path "$env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip"))
-#      {
-#          Start-FileDownload https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -FileName $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
-#      }
+  - ps: |
+      if ( !(Test-Path "$env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip"))
+      {
+          Start-FileDownload https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -FileName $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
+      }
 
 #  - IF EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- use cached SDK !!! -----
 #  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- download SDK !!! -----
