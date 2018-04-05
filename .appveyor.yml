@@ -13,10 +13,10 @@ environment:
   SDK_TARGET: 4.15.0-AIR-22-minimal-Windows
 
 install:
-  - ps: echo "install - $env:SDK_TARGET"
-  - ps: echo "install`: $env:SDK_TARGET"
-  - ps: echo 'install:' $env:SDK_TARGET
-  - cmd: echo 'install:' %SDK_TARGET%
+#  - ps: echo "install - $env:SDK_TARGET"
+#  - ps: echo "install`: $env:SDK_TARGET"
+#  - ps: echo 'install:' $env:SDK_TARGET
+#  - cmd: echo 'install:' %SDK_TARGET%
 #  - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
 #  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
 
@@ -31,10 +31,13 @@ install:
 
   - ps: ls $env:FLEX_HOME
   - cmd: dir %FLEX_HOME%
-  - cmd: mxmlc -version
 
 cache:
   - '%APPVEYOR_BUILD_FOLDER%\flex-sdk'
+
+before_build:
+  - cmd: mxmlc -version
+  - cmd: adt -version
 
 build: off
 
