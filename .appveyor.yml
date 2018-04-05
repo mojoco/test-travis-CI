@@ -44,10 +44,10 @@ before_build:
   - cmd: adt -version
 
 #build:
-build_script:
-- cmd: appWindows\_build.bat
+#build_script:
+#- cmd: appWindows\_build.bat
 
 test: off
 
-deploy_script:
-- cmd: appveyor-to-gh-pages-branch.cmd
+#deploy_script:
+#- cmd: appveyor-to-gh-pages-branch.cmd
