@@ -24,7 +24,7 @@ install:
 #  - ps: curl https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -o $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
 #  - ps: curl https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -o $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip -#
 #  - ps: Start-FileDownload 'https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip'
-  - cmd: curl -fsS -o $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip
+  - cmd: curl -fsS -o %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
 
 cache:
   # invalidate whenever appveyor.yml is changed !
