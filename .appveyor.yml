@@ -16,7 +16,7 @@ install:
 #  - ps: echo "install - $env:SDK_TARGET"
   - ps: echo 'install:' $env:SDK_TARGET
   - cmd: echo 'install:' %SDK_TARGET%
-  - ps: wget https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
+  - ps: wget --show-progress https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
 
 cache:
   # invalidate whenever appveyor.yml is changed !
