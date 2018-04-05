@@ -25,7 +25,7 @@ cache:
   # invalidate whenever appveyor.yml is changed !
 #  - '%APPVEYOR_BUILD_FOLDER%\flex-sdk' -> appveyor.yml
 #  - '%APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip' -> appveyor.yml
-  '%APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip' -> appveyor.yml
+  - '%APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip -> appveyor.yml'
 
 before_build:
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
