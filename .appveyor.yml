@@ -37,15 +37,17 @@ before_build:
   - cmd: set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\flex-sdk
   - cmd: set PATH=%PATH%;%FLEX_HOME%\bin
 
-  - ps: ls $env:FLEX_HOME
-  - cmd: dir %FLEX_HOME%
+#  - ps: ls $env:FLEX_HOME
+#  - cmd: dir %FLEX_HOME%
 
   - cmd: mxmlc -version
   - cmd: adt -version
 
-#build:
-#build_script:
+#build: (no Visual Studio project !)
+
+build_script:
 #- cmd: appWindows\_build.bat
+- cmd: echo build_script..
 
 test: off
 
