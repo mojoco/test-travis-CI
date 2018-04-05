@@ -17,7 +17,7 @@ install:
 #  - ps: echo "install $env:SDK_TARGET"
 #  - cmd: echo install %SDK_TARGET%
 #  - appveyor-install.cmd
-  - ps: $ appveyor-install.ps1
+  - ps: .\appveyor-install.ps1
 
   # is cached ?..
 
