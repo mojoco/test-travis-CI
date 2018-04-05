@@ -38,10 +38,7 @@ install:
   - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- download SDK !!! -----
 # - curl -o %APPVEYOR_BUILD_FOLDER%\flex.zip "https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip"
 # BAD
-  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -fsS -o %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
-# - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -O %APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip 'https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip'
-# - curl -O 4.15.0-AIR-22-minimal-Windows.zip https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip
-# - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl --help
+  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -o %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
 
 cache:
   # invalidate whenever appveyor.yml is changed !
@@ -51,6 +48,7 @@ cache:
 
 before_build:
   - ps: ls $env:APPVEYOR_BUILD_FOLDER
+
   - cmd: unzip %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER
   - cmd: rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
