@@ -39,7 +39,7 @@ install:
 # BAD
 # - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip -o %APPVEYOR_BUILD_FOLDER\%SDK_TARGET%.zip
 # - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -o %APPVEYOR_BUILD_FOLDER\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
-  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -o '%APPVEYOR_BUILD_FOLDER\%SDK_TARGET%.zip' 'https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip'
+  - curl -o '%APPVEYOR_BUILD_FOLDER\%SDK_TARGET%.zip' 'https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip'
 # - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl --help
 
 cache:
