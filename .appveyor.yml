@@ -20,7 +20,7 @@ install:
 #  - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
 #  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
 #  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip -O $env:APPVEYOR_BUILD_FOLDER\4.15.0-AIR-22-minimal-Windows.zip
-  - ps: wget https://github.com/mojoco/$SDK_REPO/archive/$SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$SDK_TARGET.zip
+  - ps: wget https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
 
 cache:
   # invalidate whenever appveyor.yml is changed !
