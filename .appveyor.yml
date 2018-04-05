@@ -19,35 +19,29 @@ install:
 #  - cmd: echo 'install:' %SDK_TARGET%
 #  - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
 #  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
-  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip -O $env:APPVEYOR_BUILD_FOLDER\4.15.0-AIR-22-minimal-Windows.zip
+#  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip -O $env:APPVEYOR_BUILD_FOLDER\4.15.0-AIR-22-minimal-Windows.zip
+  - ps: wget https://github.com/mojoco/$SDK_REPO/archive/$SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$SDK_TARGET.zip
 
 cache:
   # invalidate whenever appveyor.yml is changed !
-#  - '%APPVEYOR_BUILD_FOLDER%\flex-sdk' -> appveyor.yml
-#  - '%APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip' -> appveyor.yml
-  - '%APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip -> appveyor.yml'
+#  - '%APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip -> appveyor.yml'
+  - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -> appveyor.yml'
 
 before_build:
-  - ps: ls $env:APPVEYOR_BUILD_FOLDER
-  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip
-  - ps: ls $env:APPVEYOR_BUILD_FOLDER
-  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\flex-sdk-4.15.0-AIR-22-minimal-Windows" "flex-sdk"
-  - ps: ls $env:APPVEYOR_BUILD_FOLDER
-
+#  - ps: ls $env:APPVEYOR_BUILD_FOLDER
+#  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip
+  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip
+#  - ps: ls $env:APPVEYOR_BUILD_FOLDER
+#  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\flex-sdk-4.15.0-AIR-22-minimal-Windows" "flex-sdk"
+  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
+#  - ps: ls $env:APPVEYOR_BUILD_FOLDER
   - cmd: set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\flex-sdk
   - cmd: set PATH=%PATH%;%FLEX_HOME%\bin
 
-#  - ps: ls $env:FLEX_HOME
-#  - cmd: dir %FLEX_HOME%
-
+build_script:
+# - cmd: appWindows\_build.bat
   - cmd: mxmlc -version
   - cmd: adt -version
-
-#build: (no Visual Studio project !)
-
-build_script:
-#- cmd: appWindows\_build.bat
-- cmd: echo build_script..
 
 test: off
 
