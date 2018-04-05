@@ -14,26 +14,7 @@ environment:
   APPVEYOR_CACHE_SKIP_RESTORE: true
 
 install:
-#  - ps: echo "install $env:SDK_TARGET"
-#  - cmd: echo install %SDK_TARGET%
-#  - appveyor-install.cmd
-#  - ps: .\appveyor-install.ps1
-#  - ps: '& ".\appveyor-install.ps1"'
-
-  # is cached ?..
-
-# OK
-#  - ps: wget https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
-  - ps: |
-      if ( !(Test-Path "$env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip"))
-      {
-          Start-FileDownload https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -FileName $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
-      }
-
-#  - IF EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- use cached SDK !!! -----
-#  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- download SDK !!! -----
-  # ( --location -> redo the request on the new place, if the server reports that the requested page has moved to a different location )
-#  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl --location --output %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
+  - appveyor-install.cmd
 
 cache:
   # invalidate whenever appveyor.yml is changed !
@@ -42,7 +23,8 @@ cache:
   - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip'
 
 before_build:
-  - ps: ls $env:APPVEYOR_BUILD_FOLDER
+#  - ps: ls $env:APPVEYOR_BUILD_FOLDER
+  - dir %APPVEYOR_BUILD_FOLDER%
 
   - cmd: unzip %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER
@@ -54,7 +36,7 @@ before_build:
 build_script:
 # - cmd: appWindows\_build.bat
   - cmd: mxmlc -version
-  - cmd: adt -version
+  - adt -version
 
 test: off
 
