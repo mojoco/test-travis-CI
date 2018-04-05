@@ -39,6 +39,7 @@ install:
 #  - curl -o %APPVEYOR_BUILD_FOLDER%\flex.zip "https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip"
 # BAD
 #  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -o %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
+  - cmd: 'curl -L -o curl.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip'
 
 cache:
   # invalidate whenever appveyor.yml is changed !
