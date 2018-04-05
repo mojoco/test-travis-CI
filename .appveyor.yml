@@ -11,6 +11,7 @@ environment:
     secure: 9KuPMPaDBiLnWjbCSsubN+MFp4a9LOyqPzWcN3zTecQ=
   SDK_REPO: flex-sdk
   SDK_TARGET: 4.15.0-AIR-22-minimal-Windows
+  APPVEYOR_CACHE_SKIP_RESTORE: true
 
 install:
 #  - ps: echo "install $env:SDK_TARGET"
@@ -34,6 +35,7 @@ install:
 #  - cmd: curl -fsS -o %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
 
   - IF EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- use cached SDK !!! -----
+  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- download SDK !!! -----
   - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
 
 cache:
