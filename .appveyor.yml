@@ -21,11 +21,11 @@ install:
 
 # OK
 #  - ps: wget https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
-  - ps: |
-      if ( !(Test-Path "$env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip"))
-      {
-          Start-FileDownload https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -FileName $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
-      }
+#  - ps: |
+#      if ( !(Test-Path "$env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip"))
+#      {
+#          Start-FileDownload https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -FileName $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
+#      }
 
 # BAD
 #  - ps: wget -v https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
@@ -38,8 +38,8 @@ install:
 #  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- download SDK !!! -----
 #  - curl -o %APPVEYOR_BUILD_FOLDER%\flex.zip "https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip"
 # BAD
-#  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -o %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
-  - cmd: 'curl -L -o curl.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip'
+  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -L -o %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
+#  - cmd: 'curl -L -o curl.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip'
 
 cache:
   # invalidate whenever appveyor.yml is changed !
