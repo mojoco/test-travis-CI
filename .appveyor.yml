@@ -17,8 +17,8 @@ install:
   - ps: echo 'install:' $env:SDK_TARGET
   - cmd: echo 'install:' %SDK_TARGET%
 #  - ps: wget https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
-  - ps: wget -v https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
-#  - ps: curl -v https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -o $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
+#  - ps: wget -v https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -O $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
+  - ps: curl --verbose https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -o $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip
 #  - ps: curl https://github.com/mojoco/$env:SDK_REPO/archive/$env:SDK_TARGET.zip -o $env:APPVEYOR_BUILD_FOLDER\$env:SDK_TARGET.zip -#
 
 cache:
