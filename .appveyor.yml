@@ -36,7 +36,9 @@ install:
 
   - IF EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- use cached SDK !!! -----
   - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip echo ----- download SDK !!! -----
-  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip -o %APPVEYOR_BUILD_FOLDER\%SDK_TARGET%.zip
+# BAD
+# - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip -o %APPVEYOR_BUILD_FOLDER\%SDK_TARGET%.zip
+  - IF NOT EXIST %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip curl -o %APPVEYOR_BUILD_FOLDER\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
 
 cache:
   # invalidate whenever appveyor.yml is changed !
