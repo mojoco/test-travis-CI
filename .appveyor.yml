@@ -14,7 +14,8 @@ environment:
 
 install:
   - ps: echo "install - $env:SDK_TARGET"
-  - ps: echo "install:/ $env:SDK_TARGET"
+  - ps: echo "install`: $env:SDK_TARGET"
+  - ps: echo 'install:' $env:SDK_TARGET
   - cmd: echo 'install:' %SDK_TARGET%
 #  - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
 #  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
@@ -33,8 +34,7 @@ install:
   - cmd: mxmlc -version
 
 cache:
-#  - C:\ProgramData\chocolatey\lib -> appveyor.yml
-#  - '%APPVEYOR_BUILD_FOLDER%\flex-sdk'
+  - '%APPVEYOR_BUILD_FOLDER%\flex-sdk'
 
 build: off
 
