@@ -14,9 +14,9 @@ environment:
 
 install:
 #  - ps: echo "install - $env:SDK_TARGET"
-#  - ps: echo "install`: $env:SDK_TARGET"
+  - ps: echo "install`: $env:SDK_TARGET"
 #  - ps: echo 'install:' $env:SDK_TARGET
-#  - cmd: echo 'install:' %SDK_TARGET%
+  - cmd: echo 'install:' %SDK_TARGET%
 #  - cmd: echo APPVEYOR_BUILD_FOLDER - %APPVEYOR_BUILD_FOLDER%
 #  - ps: echo "APPVEYOR_BUILD_FOLDER - $env:APPVEYOR_BUILD_FOLDER"
 #  - ps: wget https://github.com/mojoco/flex-sdk/archive/4.15.0-AIR-22-minimal-Windows.zip -O $env:APPVEYOR_BUILD_FOLDER\4.15.0-AIR-22-minimal-Windows.zip
@@ -24,8 +24,9 @@ install:
 
 cache:
   # invalidate whenever appveyor.yml is changed !
-#  - '%APPVEYOR_BUILD_FOLDER%\4.15.0-AIR-22-minimal-Windows.zip -> appveyor.yml'
-  - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -> appveyor.yml'
+  # ?..
+# - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -> appveyor.yml'
+  - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip'
 
 before_build:
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER
