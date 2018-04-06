@@ -44,16 +44,14 @@
 	:: -q -> quiet
 	:: -n -> don't overwrite
 	unzip -qn %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip -d %APPVEYOR_BUILD_FOLDER%\sdk
-	:: GitHub Releases archive convention -> repoName-releaseName.zip
+	:: GitHub Releases archive content -> 'repoName-releaseName' folder
 	:: ex:
-	::		4.15.0-AIR-22-minimal-Windows.zip
-	::		to
-	::		flex-sdk-4.15.0-AIR-22-minimal-Windows
+	::		archive			-> 4.15.0.zip
+	::		to folder		-> flex-sdk-4.15.0
 
-	DEL %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip
-::	rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
-::	set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
-::	set PATH=%PATH%;%FLEX_HOME%\bin
+	del %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip
+
+	rename "%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%" "flex"
 	echo ---
 	echo ---
 	dir %APPVEYOR_BUILD_FOLDER%\sdk

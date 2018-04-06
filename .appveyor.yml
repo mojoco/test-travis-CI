@@ -17,7 +17,8 @@ environment:
 
 install:
   - if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
-  - set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
+  #- set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
+  - set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\flex
   - set PATH=%PATH%;%FLEX_HOME%\bin
 
 cache:
