@@ -39,6 +39,7 @@ SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 	echo ---
 	echo ---
 	unzip -n %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip -d .
+	dir %APPVEYOR_BUILD_FOLDER%\sdk
 	:: GitHub Releases convention -> repoName-releaseName.zip
 ::	rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
 	set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
