@@ -17,26 +17,16 @@ environment:
 
 install:
   - if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
-  #- set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
   - set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\flex
   - set PATH=%PATH%;%FLEX_HOME%\bin
 
 cache:
-  # invalidate whenever appveyor.yml is changed !
   # on invalide le cache, a chaque changement du 'appveyor.yml' !
-  # ?..
-# - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -> appveyor.yml'
-#  - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip'
-  - '%APPVEYOR_BUILD_FOLDER%\sdk'
+  - '%APPVEYOR_BUILD_FOLDER%\sdk -> appveyor.yml'
 
 before_build:
-#  - ps: ls $env:APPVEYOR_BUILD_FOLDER
-#  - dir %APPVEYOR_BUILD_FOLDER%
-
-#  - cmd: unzip -n %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -d .
-#  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
-#  - cmd: set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\flex-sdk
-#  - cmd: set PATH=%PATH%;%FLEX_HOME%\bin
+#  - ps: ls $env:APPVEYOR_BUILD_FOLDER/sdk
+  - dir %APPVEYOR_BUILD_FOLDER%\sdk
 
 build_script:
 # - cmd: appWindows\_build.bat
