@@ -31,7 +31,7 @@ before_build:
   - adt -version
 
 build_script:
- - %APPVEYOR_BUILD_FOLDER%\appWindows\_build.bat
+ - call %APPVEYOR_BUILD_FOLDER%\appWindows\_build.bat
 
 test: off
 
