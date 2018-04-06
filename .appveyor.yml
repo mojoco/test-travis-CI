@@ -17,8 +17,6 @@ environment:
 
 install:
   - if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
-  - set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\flex
-  - set PATH=%PATH%;%FLEX_HOME%\bin
 
 cache:
   # on invalide le cache, a chaque changement du 'appveyor.yml' !
@@ -27,11 +25,13 @@ cache:
 before_build:
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER/sdk
 #  - dir %APPVEYOR_BUILD_FOLDER%\sdk
-
-build_script:
-# - cmd: appWindows\_build.bat
+  - set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\flex
+  - set PATH=%PATH%;%FLEX_HOME%\bin
   - mxmlc -version
   - adt -version
+
+build_script:
+ - %APPVEYOR_BUILD_FOLDER%\appWindows\_build.bat
 
 test: off
 
