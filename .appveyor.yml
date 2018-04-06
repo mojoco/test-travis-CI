@@ -16,8 +16,8 @@ environment:
   APPVEYOR_CACHE_SKIP_RESTORE: true
 
 install:
-  #- appveyor-install.cmd
-  - if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
+  - appveyor-install.cmd
+  #- if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
 
 cache:
   # invalidate whenever appveyor.yml is changed !
