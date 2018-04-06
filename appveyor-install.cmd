@@ -1,3 +1,6 @@
+@ECHO ON
+
+
 
 :: is cached..
 
@@ -13,12 +16,12 @@
 
 :: install sdk.. (if no exist)
 
-if exist %APPVEYOR_BUILD_FOLDER%\sdk\flex (
-	echo ----- use cached SDK !!! ----- %SDK_TARGET%.zip
-	EXIT 0
-)
+::if exist %APPVEYOR_BUILD_FOLDER%\sdk\flex (
+::	echo ----- use cached SDK !!! ----- %SDK_TARGET%.zip
+::	EXIT 0
+::)
 
-if not exist %APPVEYOR_BUILD_FOLDER%\sdk\flex (
+::if not exist %APPVEYOR_BUILD_FOLDER%\sdk\flex (
 
 	echo ---
 	echo ---
@@ -45,8 +48,8 @@ if not exist %APPVEYOR_BUILD_FOLDER%\sdk\flex (
 	echo ---
 	echo ---
 
-) else (
+::) else (
 
-	echo ----- use cached SDK !!! ----- %SDK_TARGET%.zip
+::	echo ----- use cached SDK !!! ----- %SDK_TARGET%.zip
 
-)
+::)
