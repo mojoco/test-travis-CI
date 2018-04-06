@@ -21,19 +21,20 @@ install:
 
 cache:
   # invalidate whenever appveyor.yml is changed !
+  # on invalide le cache, a chaque changement du 'appveyor.yml' !
   # ?..
 # - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -> appveyor.yml'
-  - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip'
+#  - '%APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip'
   - '%APPVEYOR_BUILD_FOLDER%\sdk'
 
 before_build:
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER
   - dir %APPVEYOR_BUILD_FOLDER%
 
-  - cmd: unzip -n %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -d .
-  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
-  - cmd: set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\flex-sdk
-  - cmd: set PATH=%PATH%;%FLEX_HOME%\bin
+#  - cmd: unzip -n %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -d .
+#  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
+#  - cmd: set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\flex-sdk
+#  - cmd: set PATH=%PATH%;%FLEX_HOME%\bin
 
 build_script:
 # - cmd: appWindows\_build.bat

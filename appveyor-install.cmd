@@ -1,13 +1,13 @@
 
 :: is cached..
 
-	if not exist %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip (
-		echo ----- download SDK !!! ----- %SDK_TARGET%.zip
-		:: ( --location -> redo the request on the new place, if the server reports that the requested page has moved to a different location )
-		curl --location --output %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
-	) else (
-		echo ----- use cached SDK !!! ----- %SDK_TARGET%.zip
-	)
+::	if not exist %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip (
+::		echo ----- download SDK !!! ----- %SDK_TARGET%.zip
+::		:: ( --location -> redo the request on the new place, if the server reports that the requested page has moved to a different location )
+::		curl --location --output %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip https://github.com/mojoco/%SDK_REPO%/archive/%SDK_TARGET%.zip
+::	) else (
+::		echo ----- use cached SDK !!! ----- %SDK_TARGET%.zip
+::	)
 
 
 
@@ -32,6 +32,13 @@ if not exist %APPVEYOR_BUILD_FOLDER%\sdk\flex (
 	echo ---
 	echo ---
 	dir %APPVEYOR_BUILD_FOLDER%\sdk
+	echo ---
+	echo ---
+	unzip -n %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip -d .
+	:: GitHub Releases convention -> repoName-releaseName.zip
+::	rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
+	set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
+	set PATH=%PATH%;%FLEX_HOME%\bin
 	echo ---
 	echo ---
 	echo ---
