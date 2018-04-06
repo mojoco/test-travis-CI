@@ -1,6 +1,6 @@
 @ECHO OFF
 
-SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION 
+::SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION 
 
 
 :: is cached..
@@ -38,14 +38,23 @@ SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 	dir %APPVEYOR_BUILD_FOLDER%\sdk
 	echo ---
 	echo ---
+
+	:: -q -> quiet
+	:: -n -> don't overwrite
 	unzip -n %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip -d %APPVEYOR_BUILD_FOLDER%\sdk
-	dir %APPVEYOR_BUILD_FOLDER%\sdk
-	:: GitHub Releases convention -> repoName-releaseName.zip
+	:: GitHub Releases archive convention -> repoName-releaseName.zip
+	:: ex:
+	::		4.15.0-AIR-22-minimal-Windows.zip
+	::		to
+	::		flex-sdk-4.15.0-AIR-22-minimal-Windows
+
+	delete %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip
 ::	rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
 ::	set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
 ::	set PATH=%PATH%;%FLEX_HOME%\bin
 	echo ---
 	echo ---
+	dir %APPVEYOR_BUILD_FOLDER%\sdk
 	echo ---
 	echo ---
 	echo ---
