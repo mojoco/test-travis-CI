@@ -30,9 +30,10 @@ copy "%APPVEYOR_BUILD_FOLDER%\appWindows\Main.exe" ".\Main.exe"
 echo:
 echo:
 echo:
+dir %APPVEYOR_BUILD_FOLDER%\appWindows
+echo:
 echo:
 dir .
-echo:
 echo:
 echo:
 echo:
@@ -41,6 +42,9 @@ git add ".\Main.exe"
 
 :: send..
 git commit --message "Update GitHub Pages.[skip ci]"
+
+::									! [rejected]        gh-pages -> gh-pages (fetch first)
+
 ::git push --force --quiet "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
 git push "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
 

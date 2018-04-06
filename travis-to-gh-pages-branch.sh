@@ -45,6 +45,13 @@ git add "Main.dmg"
 
 # send..
 git commit --message "Update GitHub Pages.[skip ci]"
+
+
+#									! [rejected]        gh-pages -> gh-pages (fetch first)
+
+
+
+
 git push "https://$GITHUB_TOKEN@github.com/mojoco/test-travis-CI"
 
 # cleanup..
