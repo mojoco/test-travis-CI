@@ -1,3 +1,7 @@
+@ECHO ON
+
+:: use current directory
+	cd /d %~dp0
 
 
 echo =================================================

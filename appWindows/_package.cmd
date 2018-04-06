@@ -13,7 +13,6 @@ echo ------------
 ::		-tsa none
 ::		-tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp
 
-::	call %SDK_HOME%\bin\adt.bat												^
 	adt																		^
 		-package															^
 		-storetype "pkcs12" -keystore "certificate.p12"	-storepass "1234"	^
