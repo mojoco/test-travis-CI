@@ -16,10 +16,9 @@ environment:
   APPVEYOR_CACHE_SKIP_RESTORE: true
 
 install:
-  #- appveyor-install.cmd
   - if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
-  - cmd: set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
-  - cmd: set PATH=%PATH%;%FLEX_HOME%\bin
+  - set FLEX_HOME=%APPVEYOR_BUILD_FOLDER%\sdk\%SDK_REPO%-%SDK_TARGET%
+  - set PATH=%PATH%;%FLEX_HOME%\bin
 
 cache:
   # invalidate whenever appveyor.yml is changed !
@@ -31,7 +30,7 @@ cache:
 
 before_build:
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER
-  - dir %APPVEYOR_BUILD_FOLDER%
+#  - dir %APPVEYOR_BUILD_FOLDER%
 
 #  - cmd: unzip -n %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip -d .
 #  - cmd: rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
@@ -40,7 +39,7 @@ before_build:
 
 build_script:
 # - cmd: appWindows\_build.bat
-  - cmd: mxmlc -version
+  - mxmlc -version
   - adt -version
 
 test: off
