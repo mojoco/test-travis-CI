@@ -43,7 +43,7 @@
 
 	:: -q -> quiet
 	:: -n -> don't overwrite
-	unzip -n %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip -d %APPVEYOR_BUILD_FOLDER%\sdk
+	unzip -qn %APPVEYOR_BUILD_FOLDER%\sdk\%SDK_TARGET%.zip -d %APPVEYOR_BUILD_FOLDER%\sdk
 	:: GitHub Releases archive convention -> repoName-releaseName.zip
 	:: ex:
 	::		4.15.0-AIR-22-minimal-Windows.zip
