@@ -35,4 +35,4 @@ build_script:
 test: off
 
 deploy_script:
-  - call appveyor-deploy-to-gh-pages-branch.cmd
+  - call %APPVEYOR_BUILD_FOLDER%\appveyor-deploy-to-gh-pages-branch.cmd

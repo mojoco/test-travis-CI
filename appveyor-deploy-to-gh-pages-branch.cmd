@@ -21,7 +21,7 @@ git config --global user.email "%GITHUB_EMAIL%"
 git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
 
 :: modify.. (replace)
-PowerShell -Command "(Get-Content '.\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %appveyor_build_version%)' | Out-File -encoding utf8 '.\index.html'"
+PowerShell -Command "(Get-Content '.\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %APPVEYOR_BUILD_VERSION%)' | Out-File -encoding utf8 '.\index.html'"
 
 git add index.html
 git commit --message "Update GitHub Pages.[skip ci]"
