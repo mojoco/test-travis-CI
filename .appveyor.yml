@@ -17,7 +17,7 @@ environment:
 
 install:
   #- appveyor-install.cmd
-  - if not exist %APPVEYOR_BUILD_FOLDER%\sdk\flex appveyor-install.cmd
+  - if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
 
 cache:
   # invalidate whenever appveyor.yml is changed !
