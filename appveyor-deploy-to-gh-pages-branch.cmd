@@ -1,4 +1,4 @@
-@ECHO ON
+@ECHO OFF
 
 :: use current directory
 	cd /d %~dp0
@@ -24,9 +24,13 @@ git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
 PowerShell -Command "(Get-Content '.\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %APPVEYOR_BUILD_VERSION%)' | Out-File -encoding utf8 '.\index.html'"
 
 git add index.html
-git commit --message "Update GitHub Pages.[skip ci]"
+
+del "Main.exe"
+copy "%APPVEYOR_BUILD_FOLDER%\appWindows\Main.exe" .
+git add "Main.exe"
 
 :: send..
+git commit --message "Update GitHub Pages.[skip ci]"
 ::git push --force --quiet "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
 git push "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
 
