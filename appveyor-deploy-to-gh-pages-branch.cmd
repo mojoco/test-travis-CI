@@ -25,9 +25,19 @@ PowerShell -Command "(Get-Content '.\index.html') -replace '.*AppVeyor CI.*', 'A
 
 git add index.html
 
-del "Main.exe"
-copy "%APPVEYOR_BUILD_FOLDER%\appWindows\Main.exe" .
-git add "Main.exe"
+del ".\Main.exe"
+copy "%APPVEYOR_BUILD_FOLDER%\appWindows\Main.exe" ".\Main.exe"
+echo:
+echo:
+echo:
+echo:
+dir .
+echo:
+echo:
+echo:
+echo:
+echo:
+git add ".\Main.exe"
 
 :: send..
 git commit --message "Update GitHub Pages.[skip ci]"
