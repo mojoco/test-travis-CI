@@ -19,7 +19,7 @@ install:
   - if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
 
 cache:
-  # on invalide le cache, a chaque changement du 'appveyor.yml' !
+  #  invalidate, when 'appveyor.yml' change !
   - '%APPVEYOR_BUILD_FOLDER%\sdk -> appveyor.yml'
 
 before_build:
@@ -33,6 +33,7 @@ before_build:
 build_script:
 # - call %APPVEYOR_BUILD_FOLDER%\appWindows\_build.bat
  - call %APPVEYOR_BUILD_FOLDER%\appWindows\_build.cmd
+ - call %APPVEYOR_BUILD_FOLDER%\appWindows\_package.cmd
 
 test: off
 

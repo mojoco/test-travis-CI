@@ -3,9 +3,8 @@
 :: use current directory
 	cd /d %~dp0
 
-
-echo ------------
 echo.
+echo ------------
 
 	amxmlc Main.mxml
 
