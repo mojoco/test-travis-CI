@@ -26,7 +26,7 @@ before_build:
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER
   - dir %APPVEYOR_BUILD_FOLDER%
 
-  - cmd: unzip %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip
+  - cmd: unzip -q %APPVEYOR_BUILD_FOLDER%\%SDK_TARGET%.zip
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER
   - cmd: rename "%APPVEYOR_BUILD_FOLDER%\%SDK_REPO%-%SDK_TARGET%" "flex-sdk"
 #  - ps: ls $env:APPVEYOR_BUILD_FOLDER
