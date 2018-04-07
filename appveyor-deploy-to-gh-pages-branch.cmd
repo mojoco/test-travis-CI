@@ -25,8 +25,8 @@ PowerShell -Command "(Get-Content '.\index.html') -replace '.*AppVeyor CI.*', 'A
 
 git add index.html
 
-del ".\Main.exe"
-copy "%APPVEYOR_BUILD_FOLDER%\appWindows\Main.exe" ".\Main.exe"
+del ".\Main.zip"
+copy "%APPVEYOR_BUILD_FOLDER%\appWindows\Main.zip" ".\Main.zip"
 echo:
 echo:
 echo:
