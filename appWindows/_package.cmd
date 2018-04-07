@@ -1,4 +1,4 @@
-::@echo off
+@echo on
 
 :: use current directory
 	cd /d %~dp0
