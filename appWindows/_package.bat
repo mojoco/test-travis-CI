@@ -25,6 +25,7 @@ REM	adt										^
 
 dir .
 dir Main.exe
-zip Main.exe Main.zip
+REM zip Main.exe Main.zip
+7z a Main.zip Main.exe
 echo ------------
 echo.
