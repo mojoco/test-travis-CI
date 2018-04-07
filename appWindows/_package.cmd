@@ -16,7 +16,8 @@ REM OK
 REM		-tsa none
 REM		-tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp
 
-	adt										^
+REM	adt										^
+	call adt.bat ^
 		-package							^
 		-storetype "pkcs12" -keystore "certificate.p12"	-storepass "1234"	^
 		-tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp		^
