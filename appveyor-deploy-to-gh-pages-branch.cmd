@@ -38,7 +38,7 @@ echo:
 echo:
 echo:
 echo:
-::git add ".\Main.exe"
+git add ".\Main.zip"
 
 :: send..
 git commit --message "Update GitHub Pages.[skip ci]"
