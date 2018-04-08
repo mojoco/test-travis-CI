@@ -45,6 +45,8 @@ git commit --message "Update GitHub Pages.[skip ci]"
 
 ::									! [rejected]        gh-pages -> gh-pages (fetch first)
 
+git pull
+
 ::git push --force --quiet "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
 git push --force  "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
 
