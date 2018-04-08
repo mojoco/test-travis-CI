@@ -16,7 +16,7 @@ environment:
   #APPVEYOR_CACHE_SKIP_RESTORE: true
 
 install:
-  - if not exist %APPVEYOR_BUILD_FOLDER%\sdk appveyor-install.cmd
+  - if not exist %APPVEYOR_BUILD_FOLDER%\sdk call appveyor-install.bat
 
 cache:
   #  invalidate, when 'appveyor.yml' change !
@@ -29,10 +29,10 @@ before_build:
   - adt -version
 
 build_script:
- - call %APPVEYOR_BUILD_FOLDER%\appWindows\_build.cmd
+ - call %APPVEYOR_BUILD_FOLDER%\appWindows\_build.bat
  - call %APPVEYOR_BUILD_FOLDER%\appWindows\_package.bat
 
 test: off
 
 deploy_script:
-  - call %APPVEYOR_BUILD_FOLDER%\appveyor-deploy-to-gh-pages-branch.cmd
+  - call %APPVEYOR_BUILD_FOLDER%\appveyor-deploy-to-gh-pages-branch.bat
