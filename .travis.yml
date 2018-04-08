@@ -24,8 +24,8 @@ before_script:
   - adt -version
 
 script:
-  - sh ./_build.sh
-  - sh ./_package.sh
+  - sh ./appMacOS/_build.sh
+  - sh ./appMacOS/_package.sh
   - sh ./travis-deploy-to-gh-pages-branch.sh
 
 after_script:
