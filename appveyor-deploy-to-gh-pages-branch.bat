@@ -24,11 +24,27 @@ git clone --branch "gh-pages" https://github.com/mojoco/test-travis-CI.git .
 PowerShell -Command "(Get-Content '.\index.html') -replace '.*AppVeyor CI.*', 'AppVeyor CI (build %APPVEYOR_BUILD_VERSION%)' | Out-File -encoding utf8 '.\index.html'"
 git add index.html
 
-del ".\Main.zip"
-copy "%APPVEYOR_BUILD_FOLDER%\appWindows\Main.zip" ".\Main.zip"
-git add ".\Main.zip"
 
-:: send..
+
+
+
+:: =================================================
+::	ALERT: don't versioning binaries !!!!!
+:: =================================================
+
+::del ".\Main.zip"
+::copy "%APPVEYOR_BUILD_FOLDER%\appWindows\Main.zip" ".\Main.zip"
+::git add ".\Main.zip"
+
+:: =================================================
+::	TODO: use the releases assets insted..
+::	..
+
+
+
+
+
+:: send..	( prevent infinite build loop, with [skip ci] !!! )
 git commit --message "Update GitHub Pages.[skip ci]"
 git pull
 git push --force  "https://%GITHUB_TOKEN%@github.com/mojoco/test-travis-CI"
